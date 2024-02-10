@@ -63,17 +63,24 @@ App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
 
 ### Running with Docker
 
-1. Build the Docker image:
+1. Pull the Docker image:
+
+    ```bash
+    docker pull ghcr.io/wiktorb2004/xchat-cpp/server:master
+    ```
+
+2. Build the Docker container:
 
     ```bash
     
     ```
 
-2. Run the Docker container:
+3. Run the Docker container:
 
     ```bash
     
     ```
+
 
 ## Authentication
 
