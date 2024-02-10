@@ -2,6 +2,8 @@
 
 XChat is a real-time message sending application built in C++ using the Qt framework. It allows users to exchange messages in real-time via a graphical user interface. The project consists of two main modules: the server and the client.
 
+App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
+
 ## Features
 
 - Real-time message exchange
