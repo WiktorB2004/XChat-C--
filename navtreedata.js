@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "XChat", "index.html", [
+    [ "XChat: Real-time Chat Application", "index.html", "index" ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [

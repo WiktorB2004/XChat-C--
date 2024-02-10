@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../client_2src_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp'],['../server_2src_2main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../client_2src_2main_8cpp.html',1,'(Global Namespace)'],['../server_2src_2main_8cpp.html',1,'(Global Namespace)']]]
+  ['application_0',['XChat: Real-time Chat Application',['../index.html',1,'']]],
+  ['attributions_1',['Attributions',['../index.html#autotoc_md13',1,'']]],
+  ['authentication_2',['Authentication',['../index.html#autotoc_md7',1,'Authentication'],['../index.html#autotoc_md9',1,'Client Authentication'],['../index.html#autotoc_md8',1,'Server Authentication']]]
 ];

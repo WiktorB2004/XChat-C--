@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>XChat: Main Page</title>
+<title>XChat: XChat: Real-time Chat Application</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,10 +91,122 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">XChat Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">XChat: Real-time Chat Application </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> XChat is a real-time message sending application built in C++ using the Qt framework. It allows users to exchange messages in real-time via a graphical user interface. The project consists of two main modules: the server and the client.</p>
+<p>App Documentation: <a href="https://wiktorb2004.github.io/XChat-Cpp/">Link</a></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Features</h1>
+<ul>
+<li>Real-time message exchange</li>
+<li>Creating Group chats</li>
+<li>Adding contacts</li>
+<li>Graphical user interface built with Qt</li>
+<li>Server-client architecture</li>
+<li>Cross-platform support</li>
+<li>User Authentication</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Requirements</h1>
+<ul>
+<li>C++ compiler (supporting C++11 or higher).</li>
+<li>CMake (3.10 or higher).</li>
+<li>Qt framework (5.0 or higher).</li>
+<li>Docker (if running with Docker).</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Installation</h1>
+<ol type="1">
+<li><p class="startli">Clone the repository:</p>
+<div class="fragment"><div class="line">git clone https://github.com/WiktorB2004/XChat-Cpp.git</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Navigate to the project directory:</p>
+<div class="fragment"><div class="line">cd XChat-Cpp</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Build the server and client modules:</p>
+<div class="fragment"><div class="line">cmake -Bbuild -H.</div>
+<div class="line">cmake --build build</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Usage</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Running Locally</h2>
+<ol type="1">
+<li><p class="startli">Start the server (If you want to be a host):</p>
+<div class="fragment"><div class="line">./server/bin/server/</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Start the client (If you want to just chat):</p>
+<div class="fragment"><div class="line">./client/bin/client</div>
+</div><!-- fragment --></li>
+<li>Use the graphical user interface to exchange messages in real-time.</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Running with Docker</h2>
+<ol type="1">
+<li><p class="startli">Build the Docker image:</p>
+<div class="fragment"></div><!-- fragment --></li>
+<li><p class="startli">Run the Docker container:</p>
+<div class="fragment"></div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Authentication</h1>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Server Authentication</h2>
+<ul>
+<li>The server verifies user credentials (username and password) before allowing access to the chat.</li>
+<li>User credentials are securely hashed and stored in the server's database.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Client Authentication</h2>
+<ul>
+<li>Users must provide their credentials (username and password) to log in to the chat application.</li>
+<li>Upon successful authentication, users gain access to the chat interface.</li>
+<li>Incorrect credentials result in authentication failure, with appropriate error messages displayed to the user.</li>
+</ul>
+<p>For more details on authentication, refer to the server and client source code.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Directory Structure</h1>
+<div class="fragment"><div class="line">XChat/</div>
+<div class="line">├── .github/              # GitHub folder</div>
+<div class="line">│   └── workflows/        # Workflows folder</div>
+<div class="line">├── server/               # Server module</div>
+<div class="line">│   ├── src/              # Source files for server</div>
+<div class="line">│   ├── include/          # Header files for server</div>
+<div class="line">│   ├── tests/            # Test files for server</div>
+<div class="line">│   ├── CMakeLists.txt    # CMake configuration for server</div>
+<div class="line">│   └── Dockerfile        # Dockerfile for server module</div>
+<div class="line">│</div>
+<div class="line">├── client/               # Client module</div>
+<div class="line">│   ├── src/              # Source files for client</div>
+<div class="line">│   ├── include/          # Header files for client</div>
+<div class="line">│   ├── tests/            # Test files for client</div>
+<div class="line">│   ├── CMakeLists.txt    # CMake configuration for client</div>
+<div class="line">│   └── Dockerfile        # Dockerfile for client module</div>
+<div class="line">│</div>
+<div class="line">├── lib/                  # Needed libraries</div>
+<div class="line">├── docs/                 # Documentation of the project - generated after running doxygen</div>
+<div class="line">├── assets/               # Qt Assets</div>
+<div class="line">├── README.md             # Project README</div>
+<div class="line">├── LICENSE               # Project LICENSE</div>
+<div class="line">└── CMakeLists.txt        # Main CMakeLists.txt in root directory</div>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md11"></a>
+Contributing</h1>
+<p>Contributions are welcome! Please fork the repository and create a pull request with your proposed changes.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+License</h1>
+<p>This project is licensed under the [Apache License](LICENSE).</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Attributions</h2>
+<p><a href="https://www.flaticon.com/free-icons/send" title="send icons">Send icons created by Freepik - Flaticon</a> <br  />
+ <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Uniconlabs - Flaticon</a> <br  />
+ <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Ilham Fitrotul Hayat - Flaticon</a> <br  />
+ Photo by <a href="https://unsplash.com/@tbelabuseridze?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Tbel Abuseridze</a> on <a href="https://unsplash.com/photos/mountain-ranges-9OpS7JDaTBw?utm_content=creditCopyText&amp;utm_medium=referral&amp;utm_source=unsplash">Unsplash</a></p>
+<hr  />
+<p>Feel free to customize this Markdown file further according to your project's specific features, requirements, and preferences. Ensure that you update any installation, usage, or authentication instructions as needed based on the actual implementation of the XChat application. </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 </div><!-- doc-content -->
