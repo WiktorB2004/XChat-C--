@@ -1,4 +1,4 @@
-name: Docker - Github Packages
+name: Docker - Deploy server container
 
 on:
   push:
