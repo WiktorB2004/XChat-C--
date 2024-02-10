@@ -1,0 +1,17 @@
+# Compiled binary output
+*.o
+*.obj
+*.exe
+*.app
+*.so
+*.dll
+
+# Build directories
+/build
+**/bin
+
+# IDE specific directories
+.vscode
+
+# Documentation directory
+/docs
