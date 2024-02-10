@@ -10,8 +10,8 @@ project(NetworkChatServer)
 set(CMAKE_CXX_STANDARD 11)
 
 # Directories
-set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/server/src)
-set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/server/include)
+set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(BIN_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 # Source files
