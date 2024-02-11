@@ -1,6 +1,12 @@
 # Use a base image with the desired Linux distribution and necessary tools
 FROM ubuntu:20.04
 
+# Set up the working directory inside the container
+WORKDIR /app
+
+# Ubuntu configuration
+ARG DEBIAN_FRONTEND=noninteractive
+
 # Install necessary dependencies
 RUN apt-get update \
     && apt-get install -y \
@@ -21,9 +27,6 @@ RUN cd /tmp && \
     ./bootstrap && \
     make && \
     make install
-
-# Set up the working directory inside the container
-WORKDIR /app/client
 
 # Copy the source code of the client into the container
 COPY . .
