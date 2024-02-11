@@ -21,27 +21,26 @@ App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
 - Qt framework (5.0 or higher).
 - Docker (if running with Docker).
 
-
 ## Installation
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/WiktorB2004/XChat-Cpp.git
-    ```
+   ```bash
+   git clone https://github.com/WiktorB2004/XChat-Cpp.git
+   ```
 
 2. Navigate to the project directory:
 
-    ```bash
-    cd XChat-Cpp
-    ```
+   ```bash
+   cd XChat-Cpp
+   ```
 
 3. Build the server and client modules:
 
-    ```bash
-    cmake -Bbuild -H.
-    cmake --build build
-    ```
+   ```bash
+   cmake -Bbuild -H.
+   cmake --build build
+   ```
 
 ## Usage
 
@@ -49,15 +48,15 @@ App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
 
 1. Start the server (If you want to be a host):
 
-    ```bash
-    ./server/bin/server/
-    ```
+   ```bash
+   ./server/bin/server/
+   ```
 
 2. Start the client (If you want to just chat):
 
-    ```bash
-    ./client/bin/client
-    ```
+   ```bash
+   ./client/bin/client
+   ```
 
 3. Use the graphical user interface to exchange messages in real-time.
 
@@ -65,26 +64,23 @@ App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
 
 1. Pull the Docker image:
 
-    ```bash
-    docker pull ghcr.io/wiktorb2004/xchat-cpp/server:master
-    ```
+   ```bash
+   docker pull ghcr.io/wiktorb2004/xchat-cpp/server:master
+   ```
 
 2. Build the Docker container:
 
-    ```bash
-    
-    ```
+   ```bash
+
+   ```
 
 3. Run the Docker container:
 
-    ```bash
-    
-    ```
+   ```bash
 
+   ```
 
 ## Authentication
-
-
 
 ### Server Authentication
 
@@ -100,6 +96,7 @@ App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
 For more details on authentication, refer to the server and client source code.
 
 ## Directory Structure
+
 ```
 XChat/
 ├── .github/              # GitHub folder
@@ -125,6 +122,7 @@ XChat/
 ├── LICENSE               # Project LICENSE
 └── CMakeLists.txt        # Main CMakeLists.txt in root directory
 ```
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your proposed changes.
@@ -138,7 +136,11 @@ This project is licensed under the [Apache License](LICENSE).
 <a href="https://www.flaticon.com/free-icons/send" title="send icons">Send icons created by Freepik - Flaticon</a> <br>
 <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Uniconlabs - Flaticon</a> <br>
 <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Ilham Fitrotul Hayat - Flaticon</a> <br>
-Photo by <a href="https://unsplash.com/@tbelabuseridze?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Tbel Abuseridze</a> on <a href="https://unsplash.com/photos/mountain-ranges-9OpS7JDaTBw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+Photo by <a href="https://unsplash.com/@tbelabuseridze?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Tbel Abuseridze</a> on <a href="https://unsplash.com/photos/mountain-ranges-9OpS7JDaTBw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> <br>
+<a href="https://www.flaticon.com/free-icons/new-message" title="new message icons">New message icons created by artcus - Flaticon</a> <br>
+<a href="https://www.flaticon.com/free-icons/add" title="add icons">Add icons created by Freepik - Flaticon</a> <br>
+<a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Freepik - Flaticon</a> <br>
+<a href="https://www.flaticon.com/free-icons/cross-platform" title="cross platform icons">Cross platform icons created by Freepik - Flaticon</a>
 
 <hr>
 
