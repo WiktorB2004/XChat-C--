@@ -54,6 +54,14 @@ jobs:
         run: |
           echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+      - name: Install qt5
+        run: apt-get install -y
+          libssl-dev \
+          qt5-default \
+          qtbase5-dev \
+          qtdeclarative5-dev \
+          qml-module-qtquick-controls2
+
       - name: Move into client/
         run: cd ${{ github.workspace }}/client
 
