@@ -140,7 +140,8 @@ Photo by <a href="https://unsplash.com/@tbelabuseridze?utm_content=creditCopyTex
 <a href="https://www.flaticon.com/free-icons/new-message" title="new message icons">New message icons created by artcus - Flaticon</a> <br>
 <a href="https://www.flaticon.com/free-icons/add" title="add icons">Add icons created by Freepik - Flaticon</a> <br>
 <a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Freepik - Flaticon</a> <br>
-<a href="https://www.flaticon.com/free-icons/cross-platform" title="cross platform icons">Cross platform icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/cross-platform" title="cross platform icons">Cross platform icons created by Freepik - Flaticon</a> <br>
+Photo by <a href="https://unsplash.com/@alexbemore?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Alexander Shatov</a> on <a href="https://unsplash.com/photos/a-black-square-button-with-a-white-x-on-it-d4_aCS3jsQ0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
 <hr>
 
