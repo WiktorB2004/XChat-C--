@@ -6,8 +6,12 @@ cmake_minimum_required(VERSION 3.27)
 # Project name
 project(NetworkChatClient)
 
-# Set C++ standard to C++11
-set(CMAKE_CXX_STANDARD 11)
+# Set C++ standard to C++17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find Qt6
+find_package(Qt5 REQUIRED COMPONENTS Core Widgets REQUIRED)
 
 # Directories
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -22,6 +26,9 @@ include_directories(${INCLUDE_DIR})
 
 # Executable
 add_executable(client ${CLIENT_SOURCES})
+
+target_link_libraries(client PRIVATE Qt5::Core Qt5::Widgets)
+target_link_libraries(client PUBLIC pthread)
 
 # Set output directory
 set_target_properties(client PROPERTIES
