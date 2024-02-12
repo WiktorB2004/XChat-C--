@@ -9,10 +9,14 @@
 #include <QDesktopWidget>
 #include <QScreen>
 #include <QPixmap>
+#include "../include/app_windows.h"
 
-int chatWindow(int argc, char *argv[])
+int chat_window(QApplication &app, int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    if (!QApplication::instance())
+    {
+        new QApplication(argc, argv);
+    }
     QMainWindow mainWindow;
 
     // Load the image
@@ -77,6 +81,5 @@ int chatWindow(int argc, char *argv[])
         mainWindow.height());
 
     mainWindow.show();
-
-    return a.exec();
+    return app.exec();
 }

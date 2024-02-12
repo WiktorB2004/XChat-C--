@@ -8,11 +8,14 @@
 #include <QDesktopWidget>
 #include <QScreen>
 #include <QPixmap>
+#include "../include/app_windows.h"
 
-int main(int argc, char *argv[])
+int menu_window(QApplication &app, int argc, char *argv[])
 {
-    QApplication app(argc, argv);
-
+    if (!QApplication::instance())
+    {
+        new QApplication(argc, argv);
+    }
     // Create main window
     QMainWindow mainWindow;
     mainWindow.setWindowTitle("XChat - Login");
@@ -85,6 +88,5 @@ int main(int argc, char *argv[])
 
     // Display the window
     mainWindow.show();
-
     return app.exec();
 }
