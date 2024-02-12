@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usage_0',['Usage',['../index.html#autotoc_md4',1,'']]]
+  ['time_20chat_20application_0',['XChat: Real-time Chat Application',['../index.html',1,'']]]
 ];

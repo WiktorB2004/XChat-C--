@@ -1,9 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "acdfilmrstuwx",
-  1: "amr",
-  2: "cm",
-  3: "acrtx"
+  0: "acdfilmorstuwx",
+  1: "acmrs",
+  2: "cms",
+  3: "c",
+  4: "c",
+  5: "co",
+  6: "acrtx"
 };
 
 var indexSectionNames =
@@ -11,7 +14,10 @@ var indexSectionNames =
   0: "all",
   1: "files",
   2: "functions",
-  3: "pages"
+  3: "variables",
+  4: "enums",
+  5: "enumvalues",
+  6: "pages"
 };
 
 var indexSectionLabels =
@@ -19,6 +25,9 @@ var indexSectionLabels =
   0: "All",
   1: "Files",
   2: "Functions",
-  3: "Pages"
+  3: "Variables",
+  4: "Enumerations",
+  5: "Enumerator",
+  6: "Pages"
 };
 
