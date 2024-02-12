@@ -4,9 +4,9 @@ name: CMake build and test server
 
 on:
   push:
-    # branches: ['master']
-  pull_request:
-    # branches: ['master']
+    branches: ['NONE']
+  # pull_request:
+  # branches: ['master']
 
 jobs:
   build:
