@@ -51,7 +51,6 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libssl-dev \
-          qt5-default \
           qtbase5-dev \
           qtdeclarative5-dev \
           qml-module-qtquick-controls2
