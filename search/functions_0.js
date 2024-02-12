@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]]
+  ['chatwindow_0',['chatWindow',['../app_8cpp.html#a3f4a82d5c620c6197708240befcaf444',1,'app.cpp']]]
 ];

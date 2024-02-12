@@ -1,5 +1,7 @@
 var NAVTREEINDEX0 =
 {
+"app_8cpp.html":[1,0,0,0,0],
+"app_8cpp.html#a3f4a82d5c620c6197708240befcaf444":[1,0,0,0,0,0],
 "dir_b565d458ba0ce2faccd0ea2cd60c04eb.html":[1,0,0,0],
 "dir_db3a54907829b36871118d03417739cd.html":[1,0,0],
 "files.html":[1,0],
@@ -20,7 +22,7 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md7":[0,4],
 "index.html#autotoc_md8":[0,4,0],
 "index.html#autotoc_md9":[0,4,1],
-"main_8cpp.html":[1,0,0,0,0],
-"main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[1,0,0,0,0,0],
+"menu_8cpp.html":[1,0,0,0,1],
+"menu_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[1,0,0,0,1,0],
 "pages.html":[]
 };
