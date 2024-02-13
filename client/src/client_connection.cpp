@@ -1,21 +1,7 @@
-#include <iostream>
-#include <libwebsockets.h>
-#include <thread>
-#include <chrono>
-#include <string>
 #include "../include/server_connection.h"
 
 // Define the message to send periodically
 const char *curr_message;
-
-// Define the state of the WebSocket connection
-enum ConnectionState
-{
-    CONNECTING,
-    OPEN,
-    CLOSING,
-    CLOSED
-};
 
 // Global variable to store the connection state
 enum ConnectionState connection_state = CLOSED;
@@ -28,6 +14,7 @@ static int callback_http(struct lws *wsi, enum lws_callback_reasons reason, void
 
 static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *user, void *in, size_t len)
 {
+    Client *client_ptr = (Client *)lws_context_user(lws_get_context(wsi));
     switch (reason)
     {
     case LWS_CALLBACK_CLIENT_CONNECTION_ERROR:
@@ -37,6 +24,8 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
     case LWS_CALLBACK_CLIENT_ESTABLISHED:
         std::cout << "Connected to server" << std::endl;
         connection_state = OPEN; // Update connection state
+        client_ptr->setStatus(OPEN);
+        emit client_ptr->connectionEstablished();
         curr_message = "{\"sender\":\"Client\",\"recipient\":\"Server\",\"content\":\"Just connected!\"}";
         lws_callback_on_writable(wsi); // Trigger writable callback
         break;
@@ -54,7 +43,16 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
             unsigned char buf[LWS_PRE + len];
             memcpy(buf + LWS_PRE, curr_message, len);
             lws_write(wsi, &buf[LWS_PRE], len, LWS_WRITE_TEXT);
-            curr_message = "{\"sender\":\"Client\",\"recipient\":\"Server\",\"content\":\"Message sent by client!\"}";
+            std::string connection_address = client_ptr->address + std::string(":") + std::to_string(client_ptr->port);
+            std::string temp_message = "{\"Sender\":\"" + client_ptr->username + "\",\"Recipient\":\"" + connection_address + "\",\"content\":\"Message sent by client:" + client_ptr->message + "\"}";
+            char *new_message = strdup(temp_message.c_str());
+            if (!new_message)
+            {
+                // Handle memory allocation failure
+                return -1;
+            }
+
+            curr_message = new_message;
         }
         break;
 
@@ -62,17 +60,18 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
     case LWS_CALLBACK_CLIENT_CLOSED:
         std::cout << "Connection closed" << std::endl;
         connection_state = CLOSED; // Update connection state
+        client_ptr->setStatus(CLOSED);
         break;
 
     default:
         break;
     }
-
     return 0;
 }
 
-int server_start(std::string server_address, int connection_port)
+int start_connection(Client &client, std::string server_address, int connection_port)
 {
+    Client *client_ptr = &client;
     // Server configuration
     struct lws_context_creation_info info;
     struct lws_client_connect_info ccinfo;
@@ -98,6 +97,7 @@ int server_start(std::string server_address, int connection_port)
     info.protocols = protocols;
     info.gid = -1;
     info.uid = -1;
+    info.user = client_ptr;
 
     context = lws_create_context(&info);
     if (!context)

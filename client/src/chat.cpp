@@ -1,33 +1,16 @@
-#include <QApplication>
-#include <QMainWindow>
-#include <QLabel>
-#include <QGridLayout>
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QDesktopWidget>
-#include <QScreen>
-#include <QPixmap>
 #include "../include/app_windows.h"
 
-int chat_window(QApplication &app, int argc, char *argv[])
+ChatWindow::ChatWindow(QWidget *parent) : QMainWindow(parent)
 {
-    if (!QApplication::instance())
-    {
-        new QApplication(argc, argv);
-    }
-    QMainWindow mainWindow;
-
     // Load the image
     QPixmap backgroundImage("assets/images/background.jpg");
 
     // Create a QLabel to display the image as background
-    QLabel *backgroundLabel = new QLabel(&mainWindow);
+    QLabel *backgroundLabel = new QLabel(this); // Note: Use "this" as the parent
     backgroundLabel->setPixmap(backgroundImage);
 
     // Create a QWidget to hold the grid
-    QWidget *gridWidget = new QWidget(&mainWindow);
+    QWidget *gridWidget = new QWidget(this); // Note: Use "this" as the parent
     QGridLayout *gridLayout = new QGridLayout(gridWidget);
 
     QLabel *gridLabel = new QLabel(QString("(0, 0)"));
@@ -62,24 +45,27 @@ int chat_window(QApplication &app, int argc, char *argv[])
     gridWidget->setLayout(gridLayout);
 
     // Set layout for the rows widget
-    QWidget *rowsWidget = new QWidget(&mainWindow);
+    QWidget *rowsWidget = new QWidget(this);
     QHBoxLayout *rowsLayout = new QHBoxLayout(rowsWidget);
     rowsLayout->addLayout(leftColumnLayout);
     rowsLayout->addWidget(gridWidget);
 
     // Set central widget of the main window
-    mainWindow.setCentralWidget(backgroundLabel);
+    setCentralWidget(backgroundLabel);
 
     // Add the rows widget to the main window
-    mainWindow.setCentralWidget(backgroundLabel);
-    mainWindow.setCentralWidget(rowsWidget);
+    setCentralWidget(backgroundLabel);
+    setCentralWidget(rowsWidget);
 
-    mainWindow.setGeometry(
-        QGuiApplication::primaryScreen()->geometry().center().x() - mainWindow.width() / 2,
-        QGuiApplication::primaryScreen()->geometry().center().y() - mainWindow.height() / 2,
-        mainWindow.width(),
-        mainWindow.height());
+    // Center the window on the screen
+    setGeometry(
+        QGuiApplication::primaryScreen()->geometry().center().x() - width() / 2,
+        QGuiApplication::primaryScreen()->geometry().center().y() - height() / 2,
+        width(),
+        height());
+}
 
-    mainWindow.show();
-    return app.exec();
+ChatWindow::~ChatWindow()
+{
+    // Destructor implementation
 }

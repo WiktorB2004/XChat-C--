@@ -19,15 +19,25 @@ set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(BIN_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
-# Source files
-file(GLOB_RECURSE CLIENT_SOURCES "${SOURCE_DIR}/*.cpp")
-
 # Include directories
 include_directories(${INCLUDE_DIR})
 include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
 
+# Source files
+set(CLIENT_SOURCES
+    ${SOURCE_DIR}/client_connection.cpp
+    ${SOURCE_DIR}/chat.cpp
+    ${SOURCE_DIR}/login.cpp
+    ${SOURCE_DIR}/main.cpp
+)
+
+QT5_WRAP_CPP(MOC_FILES
+    ${INCLUDE_DIR}/app_windows.h
+    ${INCLUDE_DIR}/server_connection.h
+)
+
 # Executable
-add_executable(client ${CLIENT_SOURCES})
+add_executable(client ${CLIENT_SOURCES} ${MOC_FILES})
 
 target_link_libraries(client PRIVATE Qt5::Core Qt5::Widgets)
 target_link_libraries(client PRIVATE ${LIBWEBSOCKETS_LIBRARIES})
