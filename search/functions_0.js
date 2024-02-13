@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['chat_5fwindow_0',['chat_window',['../app__windows_8h.html#adc593a2f6d139b7cb940c6409eba74d2',1,'chat_window(QApplication &amp;app, int argc, char *argv[]):&#160;app.cpp'],['../app_8cpp.html#adc593a2f6d139b7cb940c6409eba74d2',1,'chat_window(QApplication &amp;app, int argc, char *argv[]):&#160;app.cpp']]]
+  ['chatwindow_0',['ChatWindow',['../classChatWindow.html#a870f144a418794b7da640ceed7af32c9',1,'ChatWindow']]],
+  ['connectionestablished_1',['connectionEstablished',['../classClient.html#a82107ee70f7d3da5205337bdfe9e2bea',1,'Client']]]
 ];

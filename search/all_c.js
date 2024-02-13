@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['with_20docker_0',['Running with Docker',['../index.html#autotoc_md6',1,'']]]
+  ['time_20chat_20application_0',['XChat: Real-time Chat Application',['../index.html',1,'']]]
 ];

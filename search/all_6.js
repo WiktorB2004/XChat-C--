@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['menu_2ecpp_2',['menu.cpp',['../menu_8cpp.html',1,'']]],
-  ['menu_5fwindow_3',['menu_window',['../app__windows_8h.html#aec27081bb5a026fe55a2363c2b0fbbe5',1,'menu_window(QApplication &amp;app, int argc, char *argv[]):&#160;menu.cpp'],['../menu_8cpp.html#aec27081bb5a026fe55a2363c2b0fbbe5',1,'menu_window(QApplication &amp;app, int argc, char *argv[]):&#160;menu.cpp']]]
+  ['license_0',['License',['../index.html#autotoc_md12',1,'']]],
+  ['locally_1',['Running Locally',['../index.html#autotoc_md5',1,'']]],
+  ['login_2ecpp_2',['login.cpp',['../login_8cpp.html',1,'']]],
+  ['loginwindow_3',['LoginWindow',['../classLoginWindow.html',1,'LoginWindow'],['../classLoginWindow.html#aa4c04d26b299de00156bbf3c32b2a082',1,'LoginWindow::LoginWindow()']]]
 ];
