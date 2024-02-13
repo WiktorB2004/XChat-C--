@@ -12,6 +12,7 @@ RUN apt-get update \
     && apt-get install -y \
     wget \
     build-essential \
+    libwebsockets-dev \
     libssl-dev \
     qt5-default \
     qtbase5-dev \
