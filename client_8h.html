@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>XChat: Class Hierarchy</title>
+<title>XChat: client/include/client.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('hierarchy.html',''); initResizable(); });
+$(function(){initNavTree('client_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -92,24 +92,59 @@ $(function(){initNavTree('hierarchy.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Class Hierarchy</div></div>
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle"><div class="title">client.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">This inheritance list is sorted roughly, but not completely, alphabetically:</div><div class="directory">
-<div class="levels">[detail level <span onclick="javascript:dynsection.toggleLevel(1);">1</span><span onclick="javascript:dynsection.toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="dynsection.toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QMainWindow</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classChatWindow.html" target="_self">ChatWindow</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classLoginWindow.html" target="_self">LoginWindow</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="dynsection.toggleFolder('1_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QObject</b></td><td class="desc"></td></tr>
-<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classClient.html" target="_self">Client</a></td><td class="desc"></td></tr>
-<tr id="row_1_1_" class="odd"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="classServerConnection.html" target="_self">ServerConnection</a></td><td class="desc"></td></tr>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &lt;QObject&gt;</code><br />
+<code>#include &lt;libwebsockets.h&gt;</code><br />
+</div>
+<p><a href="client_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClient.html">Client</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:acdd867d72142510ce53521a63a062f9b" id="r_acdd867d72142510ce53521a63a062f9b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdd867d72142510ce53521a63a062f9b">ConnectionState</a> { <a class="el" href="#acdd867d72142510ce53521a63a062f9ba06b876bcf37a32fed1dbadf4273827bf">CONNECTING</a>
+, <a class="el" href="#acdd867d72142510ce53521a63a062f9ba0e0143636c29971736eab47415868eae">OPEN</a>
+, <a class="el" href="#acdd867d72142510ce53521a63a062f9ba8ab2cae69d2b33297ab24a5818213f18">CLOSING</a>
+, <a class="el" href="#acdd867d72142510ce53521a63a062f9ba929f0327e17604ce9713b2a6117bd603">CLOSED</a>
+ }</td></tr>
+<tr class="separator:acdd867d72142510ce53521a63a062f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- directory -->
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="acdd867d72142510ce53521a63a062f9b" name="acdd867d72142510ce53521a63a062f9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd867d72142510ce53521a63a062f9b">&#9670;&#160;</a></span>ConnectionState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#acdd867d72142510ce53521a63a062f9b">ConnectionState</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acdd867d72142510ce53521a63a062f9ba06b876bcf37a32fed1dbadf4273827bf" name="acdd867d72142510ce53521a63a062f9ba06b876bcf37a32fed1dbadf4273827bf"></a>CONNECTING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdd867d72142510ce53521a63a062f9ba0e0143636c29971736eab47415868eae" name="acdd867d72142510ce53521a63a062f9ba0e0143636c29971736eab47415868eae"></a>OPEN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdd867d72142510ce53521a63a062f9ba8ab2cae69d2b33297ab24a5818213f18" name="acdd867d72142510ce53521a63a062f9ba8ab2cae69d2b33297ab24a5818213f18"></a>CLOSING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="acdd867d72142510ce53521a63a062f9ba929f0327e17604ce9713b2a6117bd603" name="acdd867d72142510ce53521a63a062f9ba929f0327e17604ce9713b2a6117bd603"></a>CLOSED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="dir_db3a54907829b36871118d03417739cd.html">client</a></li><li class="navelem"><a class="el" href="dir_5c23080e296bbe846f4ed2d01d7b595d.html">include</a></li><li class="navelem"><a class="el" href="client_8h.html">client.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['license_0',['License',['../index.html#autotoc_md12',1,'']]],
-  ['locally_1',['Running Locally',['../index.html#autotoc_md5',1,'']]],
-  ['login_2ecpp_2',['login.cpp',['../login_8cpp.html',1,'']]],
-  ['loginwindow_3',['LoginWindow',['../classLoginWindow.html',1,'LoginWindow'],['../classLoginWindow.html#aa4c04d26b299de00156bbf3c32b2a082',1,'LoginWindow::LoginWindow()']]]
+  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['message_2',['message',['../classClient.html#abb45c8bc7742c5c0b2c80528b7b40b1e',1,'Client']]]
 ];

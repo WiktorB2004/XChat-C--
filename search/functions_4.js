@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setstatus_0',['setStatus',['../classClient.html#ad4c4d2d9a98ac9f68540e16ee8883d12',1,'Client']]],
-  ['start_5fconnection_1',['start_connection',['../server__connection_8h.html#a6cd841b4bb882199dbfe8be7e5e3f6e4',1,'start_connection(Client &amp;client, std::string server_address, int connection_port):&#160;client_connection.cpp'],['../client__connection_8cpp.html#a6cd841b4bb882199dbfe8be7e5e3f6e4',1,'start_connection(Client &amp;client, std::string server_address, int connection_port):&#160;client_connection.cpp']]],
-  ['statuschanged_2',['statusChanged',['../classClient.html#aab03e8dfc843dc4849e355ce7eaaabe5',1,'Client']]]
+  ['send_5fmessage_0',['send_message',['../classServerConnection.html#a1cfbde30af095c6d03511d816d419b14',1,'ServerConnection']]],
+  ['sendmessage_1',['sendMessage',['../classClient.html#acab1647903f104cd9057cc2f81081f58',1,'Client']]],
+  ['serverconnection_2',['ServerConnection',['../classServerConnection.html#a8197c059668583d8082eaa57859abea7',1,'ServerConnection']]]
 ];

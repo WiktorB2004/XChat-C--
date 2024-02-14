@@ -100,7 +100,7 @@ $(function(){initNavTree('classClient.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="server__connection_8h_source.html">server_connection.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="client_8h_source.html">client.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Client:</div>
 <div class="dyncontent">
@@ -110,34 +110,36 @@ Inheritance diagram for Client:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:aab03e8dfc843dc4849e355ce7eaaabe5" id="r_aab03e8dfc843dc4849e355ce7eaaabe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab03e8dfc843dc4849e355ce7eaaabe5">statusChanged</a> ()</td></tr>
-<tr class="separator:aab03e8dfc843dc4849e355ce7eaaabe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82107ee70f7d3da5205337bdfe9e2bea" id="r_a82107ee70f7d3da5205337bdfe9e2bea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82107ee70f7d3da5205337bdfe9e2bea">connectionEstablished</a> ()</td></tr>
-<tr class="separator:a82107ee70f7d3da5205337bdfe9e2bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3b07b5738ea0e126c069c63b21f606" id="r_ade3b07b5738ea0e126c069c63b21f606"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade3b07b5738ea0e126c069c63b21f606">connectionSuccess</a> ()</td></tr>
+<tr class="separator:ade3b07b5738ea0e126c069c63b21f606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab1647903f104cd9057cc2f81081f58" id="r_acab1647903f104cd9057cc2f81081f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acab1647903f104cd9057cc2f81081f58">sendMessage</a> ()</td></tr>
+<tr class="separator:acab1647903f104cd9057cc2f81081f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad4c4d2d9a98ac9f68540e16ee8883d12" id="r_ad4c4d2d9a98ac9f68540e16ee8883d12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c4d2d9a98ac9f68540e16ee8883d12">setStatus</a> (<a class="el" href="server__connection_8h.html#acdd867d72142510ce53521a63a062f9b">ConnectionState</a> new_status)</td></tr>
-<tr class="separator:ad4c4d2d9a98ac9f68540e16ee8883d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0e2628fa1525b85836310d5fadc38d2" id="r_af0e2628fa1525b85836310d5fadc38d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="server__connection_8h.html#acdd867d72142510ce53521a63a062f9b">ConnectionState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0e2628fa1525b85836310d5fadc38d2">getStatus</a> () const</td></tr>
-<tr class="separator:af0e2628fa1525b85836310d5fadc38d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218faae4b216f2bba76f0f6c8612051d" id="r_a218faae4b216f2bba76f0f6c8612051d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a218faae4b216f2bba76f0f6c8612051d">Client</a> (std::string <a class="el" href="#a55594f272499f95a8fa6948d8a5004f5">username</a>, std::string <a class="el" href="#a329ce26d733cd2b4b8bd62b79562836d">password</a>, std::string address, int port)</td></tr>
+<tr class="separator:a218faae4b216f2bba76f0f6c8612051d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a55594f272499f95a8fa6948d8a5004f5" id="r_a55594f272499f95a8fa6948d8a5004f5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55594f272499f95a8fa6948d8a5004f5">username</a></td></tr>
 <tr class="separator:a55594f272499f95a8fa6948d8a5004f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a826dd1239445cc217c3cc9c9e417d7d7" id="r_a826dd1239445cc217c3cc9c9e417d7d7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a826dd1239445cc217c3cc9c9e417d7d7">address</a></td></tr>
-<tr class="separator:a826dd1239445cc217c3cc9c9e417d7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329ce26d733cd2b4b8bd62b79562836d" id="r_a329ce26d733cd2b4b8bd62b79562836d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a329ce26d733cd2b4b8bd62b79562836d">password</a></td></tr>
+<tr class="separator:a329ce26d733cd2b4b8bd62b79562836d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb45c8bc7742c5c0b2c80528b7b40b1e" id="r_abb45c8bc7742c5c0b2c80528b7b40b1e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb45c8bc7742c5c0b2c80528b7b40b1e">message</a></td></tr>
 <tr class="separator:abb45c8bc7742c5c0b2c80528b7b40b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8864d1362eae7c50e53c0d131b7442" id="r_aad8864d1362eae7c50e53c0d131b7442"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad8864d1362eae7c50e53c0d131b7442">port</a></td></tr>
-<tr class="separator:aad8864d1362eae7c50e53c0d131b7442"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7203cefaef94f26b6fdfaa250ee8cf0" id="r_af7203cefaef94f26b6fdfaa250ee8cf0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7203cefaef94f26b6fdfaa250ee8cf0">message_count</a></td></tr>
-<tr class="separator:af7203cefaef94f26b6fdfaa250ee8cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2aef7e0a0adf648f907e6397fd1c59" id="r_a1a2aef7e0a0adf648f907e6397fd1c59"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a2aef7e0a0adf648f907e6397fd1c59">input</a></td></tr>
+<tr class="separator:a1a2aef7e0a0adf648f907e6397fd1c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6911412ac4e03b8e762afb691e849e39" id="r_a6911412ac4e03b8e762afb691e849e39"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6911412ac4e03b8e762afb691e849e39">select_address</a></td></tr>
+<tr class="separator:a6911412ac4e03b8e762afb691e849e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca4bbcca6911aa35240718df6b2d60a" id="r_abca4bbcca6911aa35240718df6b2d60a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abca4bbcca6911aa35240718df6b2d60a">select_port</a></td></tr>
+<tr class="separator:abca4bbcca6911aa35240718df6b2d60a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b7fd4439b70727a8a49af19f402427" id="r_af4b7fd4439b70727a8a49af19f402427"><td class="memItemLeft" align="right" valign="top">struct lws *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4b7fd4439b70727a8a49af19f402427">wsi</a></td></tr>
+<tr class="separator:af4b7fd4439b70727a8a49af19f402427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a82107ee70f7d3da5205337bdfe9e2bea" name="a82107ee70f7d3da5205337bdfe9e2bea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82107ee70f7d3da5205337bdfe9e2bea">&#9670;&#160;</a></span>connectionEstablished</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a218faae4b216f2bba76f0f6c8612051d" name="a218faae4b216f2bba76f0f6c8612051d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a218faae4b216f2bba76f0f6c8612051d">&#9670;&#160;</a></span>Client()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,7 +148,47 @@ Data Fields</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Client::connectionEstablished </td>
+          <td class="memname">Client::Client </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>username</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>password</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>address</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ade3b07b5738ea0e126c069c63b21f606" name="ade3b07b5738ea0e126c069c63b21f606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3b07b5738ea0e126c069c63b21f606">&#9670;&#160;</a></span>connectionSuccess</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Client::connectionSuccess </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -161,8 +203,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="af0e2628fa1525b85836310d5fadc38d2" name="af0e2628fa1525b85836310d5fadc38d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0e2628fa1525b85836310d5fadc38d2">&#9670;&#160;</a></span>getStatus()</h2>
+<a id="acab1647903f104cd9057cc2f81081f58" name="acab1647903f104cd9057cc2f81081f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab1647903f104cd9057cc2f81081f58">&#9670;&#160;</a></span>sendMessage</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,57 +213,7 @@ Data Fields</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="server__connection_8h.html#acdd867d72142510ce53521a63a062f9b">ConnectionState</a> Client::getStatus </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad4c4d2d9a98ac9f68540e16ee8883d12" name="ad4c4d2d9a98ac9f68540e16ee8883d12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4c4d2d9a98ac9f68540e16ee8883d12">&#9670;&#160;</a></span>setStatus()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Client::setStatus </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="server__connection_8h.html#acdd867d72142510ce53521a63a062f9b">ConnectionState</a></td>          <td class="paramname"><span class="paramname"><em>new_status</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aab03e8dfc843dc4849e355ce7eaaabe5" name="aab03e8dfc843dc4849e355ce7eaaabe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab03e8dfc843dc4849e355ce7eaaabe5">&#9670;&#160;</a></span>statusChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Client::statusChanged </td>
+          <td class="memname">void Client::sendMessage </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -237,14 +229,14 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a id="a826dd1239445cc217c3cc9c9e417d7d7" name="a826dd1239445cc217c3cc9c9e417d7d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a826dd1239445cc217c3cc9c9e417d7d7">&#9670;&#160;</a></span>address</h2>
+<a id="a1a2aef7e0a0adf648f907e6397fd1c59" name="a1a2aef7e0a0adf648f907e6397fd1c59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2aef7e0a0adf648f907e6397fd1c59">&#9670;&#160;</a></span>input</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string Client::address</td>
+          <td class="memname">std::string Client::input</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -265,28 +257,42 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="af7203cefaef94f26b6fdfaa250ee8cf0" name="af7203cefaef94f26b6fdfaa250ee8cf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7203cefaef94f26b6fdfaa250ee8cf0">&#9670;&#160;</a></span>message_count</h2>
+<a id="a329ce26d733cd2b4b8bd62b79562836d" name="a329ce26d733cd2b4b8bd62b79562836d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329ce26d733cd2b4b8bd62b79562836d">&#9670;&#160;</a></span>password</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Client::message_count</td>
+          <td class="memname">std::string Client::password</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aad8864d1362eae7c50e53c0d131b7442" name="aad8864d1362eae7c50e53c0d131b7442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad8864d1362eae7c50e53c0d131b7442">&#9670;&#160;</a></span>port</h2>
+<a id="a6911412ac4e03b8e762afb691e849e39" name="a6911412ac4e03b8e762afb691e849e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6911412ac4e03b8e762afb691e849e39">&#9670;&#160;</a></span>select_address</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Client::port</td>
+          <td class="memname">std::string Client::select_address</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abca4bbcca6911aa35240718df6b2d60a" name="abca4bbcca6911aa35240718df6b2d60a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abca4bbcca6911aa35240718df6b2d60a">&#9670;&#160;</a></span>select_port</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Client::select_port</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -307,8 +313,22 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="af4b7fd4439b70727a8a49af19f402427" name="af4b7fd4439b70727a8a49af19f402427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b7fd4439b70727a8a49af19f402427">&#9670;&#160;</a></span>wsi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct lws* Client::wsi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>client/include/<a class="el" href="server__connection_8h_source.html">server_connection.h</a></li>
+<li>client/include/<a class="el" href="client_8h_source.html">client.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
