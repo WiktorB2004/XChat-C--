@@ -25,6 +25,7 @@ include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
 
 # Source files
 set(CLIENT_SOURCES
+    ${SOURCE_DIR}/client.cpp
     ${SOURCE_DIR}/client_connection.cpp
     ${SOURCE_DIR}/chat.cpp
     ${SOURCE_DIR}/login.cpp
@@ -32,6 +33,7 @@ set(CLIENT_SOURCES
 )
 
 QT5_WRAP_CPP(MOC_FILES
+    ${INCLUDE_DIR}/client.h
     ${INCLUDE_DIR}/app_windows.h
     ${INCLUDE_DIR}/server_connection.h
 )

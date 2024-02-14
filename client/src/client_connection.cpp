@@ -1,4 +1,5 @@
 #include "../include/server_connection.h"
+#include "../include/client.h"
 
 // Define the message to send periodically
 const char *curr_message;
@@ -22,11 +23,9 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
         break;
 
     case LWS_CALLBACK_CLIENT_ESTABLISHED:
-        std::cout << "Connected to server" << std::endl;
+        std::cout << "Connected to server: " + client_ptr->username << std::endl;
         connection_state = OPEN; // Update connection state
-        client_ptr->setStatus(OPEN);
-        emit client_ptr->connectionEstablished();
-        curr_message = "{\"sender\":\"Client\",\"recipient\":\"Server\",\"content\":\"Just connected!\"}";
+        emit client_ptr->connectionSuccess();
         lws_callback_on_writable(wsi); // Trigger writable callback
         break;
 
@@ -38,21 +37,18 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
         // Check if connection is open before sending message
         if (connection_state == OPEN)
         {
+            char *new_message = strdup(client_ptr->message.c_str());
+            curr_message = strdup(client_ptr->message.c_str());
             // Send the selected message
             int len = strlen(curr_message);
             unsigned char buf[LWS_PRE + len];
             memcpy(buf + LWS_PRE, curr_message, len);
             lws_write(wsi, &buf[LWS_PRE], len, LWS_WRITE_TEXT);
-            std::string connection_address = client_ptr->address + std::string(":") + std::to_string(client_ptr->port);
-            std::string temp_message = "{\"Sender\":\"" + client_ptr->username + "\",\"Recipient\":\"" + connection_address + "\",\"content\":\"Message sent by client:" + client_ptr->message + "\"}";
-            char *new_message = strdup(temp_message.c_str());
             if (!new_message)
             {
                 // Handle memory allocation failure
                 return -1;
             }
-
-            curr_message = new_message;
         }
         break;
 
@@ -60,7 +56,6 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
     case LWS_CALLBACK_CLIENT_CLOSED:
         std::cout << "Connection closed" << std::endl;
         connection_state = CLOSED; // Update connection state
-        client_ptr->setStatus(CLOSED);
         break;
 
     default:
@@ -69,9 +64,8 @@ static int callback_ws(struct lws *wsi, enum lws_callback_reasons reason, void *
     return 0;
 }
 
-int start_connection(Client &client, std::string server_address, int connection_port)
+int ServerConnection::run_server()
 {
-    Client *client_ptr = &client;
     // Server configuration
     struct lws_context_creation_info info;
     struct lws_client_connect_info ccinfo;
@@ -97,7 +91,7 @@ int start_connection(Client &client, std::string server_address, int connection_
     info.protocols = protocols;
     info.gid = -1;
     info.uid = -1;
-    info.user = client_ptr;
+    info.user = &client;
 
     context = lws_create_context(&info);
     if (!context)
@@ -118,6 +112,7 @@ int start_connection(Client &client, std::string server_address, int connection_
     ccinfo.ietf_version_or_minus_one = ietf_version;
 
     struct lws *wsi = lws_client_connect_via_info(&ccinfo);
+    client.wsi = wsi;
     if (!wsi)
     {
         std::cerr << "Failed to connect to server" << std::endl;
@@ -130,7 +125,7 @@ int start_connection(Client &client, std::string server_address, int connection_
         lws_service(context, 0);
 
         // Send writable each second
-        lws_callback_on_writable(wsi);
+        emit client.sendMessage();
 
         // Sleep for a 3 seconds to avoid busy loop
         std::this_thread::sleep_for(std::chrono::seconds(3));
@@ -138,5 +133,11 @@ int start_connection(Client &client, std::string server_address, int connection_
 
     lws_context_destroy(context);
 
+    return 0;
+}
+
+int ServerConnection::send_message()
+{
+    lws_callback_on_writable(client.wsi);
     return 0;
 }
