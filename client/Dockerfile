@@ -14,10 +14,7 @@ RUN apt-get update \
     build-essential \
     libwebsockets-dev \
     libssl-dev \
-    qt5-default \
-    qtbase5-dev \
-    qtdeclarative5-dev \
-    qml-module-qtquick-controls2
+    qt6-base-dev
 
 
 # Install Cmake
