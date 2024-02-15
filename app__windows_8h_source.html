@@ -104,45 +104,54 @@ $(function(){initNavTree('app__windows_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define APP_WINDOWS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QApplication&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QDesktopWidget&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QScreen&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classLoginWindow.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="classLoginWindow.html">LoginWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    Q_OBJECT</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classLoginWindow.html#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158">~LoginWindow</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QCoreApplication&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QGridLayout&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QLineEdit&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QDesktopWidget&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QScreen&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="server__connection_8h.html">../include/server_connection.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classLoginWindow.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="classLoginWindow.html">LoginWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Q_OBJECT</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classLoginWindow.html#a36d36b418955c37add342ef812e4ffca">LoginWindow</a>(<a class="code hl_class" href="classServerConnection.html">ServerConnection</a> *connection, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158">~LoginWindow</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
 </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classChatWindow.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classChatWindow.html">ChatWindow</a> : <span class="keyword">public</span> QMainWindow</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Q_OBJECT</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classChatWindow.html#a870f144a418794b7da640ceed7af32c9">ChatWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classChatWindow.html">   27</a></span><span class="keyword">class </span><a class="code hl_class" href="classChatWindow.html">ChatWindow</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    Q_OBJECT</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classChatWindow.html#af7f09842d4981a838d6014dc6e9cebdb">ChatWindow</a>(<a class="code hl_class" href="classServerConnection.html">ServerConnection</a> *<a class="code hl_variable" href="classChatWindow.html#afba470900501094fff293adf05f32510">connection</a>, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classChatWindow.html#afba470900501094fff293adf05f32510">   34</a></span>    <a class="code hl_class" href="classServerConnection.html">ServerConnection</a> *<a class="code hl_variable" href="classChatWindow.html#afba470900501094fff293adf05f32510">connection</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>};</div>
 </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">// APP_WINDOWS_H</span></div>
-<div class="ttc" id="aclassChatWindow_html"><div class="ttname"><a href="classChatWindow.html">ChatWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:26</div></div>
-<div class="ttc" id="aclassChatWindow_html_a100c64a78603b3c65026acfd0b64ad19"><div class="ttname"><a href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">ChatWindow::~ChatWindow</a></div><div class="ttdeci">virtual ~ChatWindow()</div><div class="ttdef"><b>Definition</b> chat.cpp:68</div></div>
-<div class="ttc" id="aclassChatWindow_html_a870f144a418794b7da640ceed7af32c9"><div class="ttname"><a href="classChatWindow.html#a870f144a418794b7da640ceed7af32c9">ChatWindow::ChatWindow</a></div><div class="ttdeci">ChatWindow(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> chat.cpp:3</div></div>
-<div class="ttc" id="aclassLoginWindow_html"><div class="ttname"><a href="classLoginWindow.html">LoginWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:18</div></div>
-<div class="ttc" id="aclassLoginWindow_html_a0c49fe788dcce29aa50e7d974e1ad158"><div class="ttname"><a href="classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158">LoginWindow::~LoginWindow</a></div><div class="ttdeci">virtual ~LoginWindow()</div><div class="ttdef"><b>Definition</b> login.cpp:76</div></div>
-<div class="ttc" id="aclassLoginWindow_html_aa4c04d26b299de00156bbf3c32b2a082"><div class="ttname"><a href="classLoginWindow.html#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow::LoginWindow</a></div><div class="ttdeci">LoginWindow(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> login.cpp:3</div></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif </span><span class="comment">// APP_WINDOWS_H</span></div>
+<div class="ttc" id="aclassChatWindow_html"><div class="ttname"><a href="classChatWindow.html">ChatWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:28</div></div>
+<div class="ttc" id="aclassChatWindow_html_a100c64a78603b3c65026acfd0b64ad19"><div class="ttname"><a href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">ChatWindow::~ChatWindow</a></div><div class="ttdeci">virtual ~ChatWindow()</div><div class="ttdef"><b>Definition</b> chat.cpp:46</div></div>
+<div class="ttc" id="aclassChatWindow_html_af7f09842d4981a838d6014dc6e9cebdb"><div class="ttname"><a href="classChatWindow.html#af7f09842d4981a838d6014dc6e9cebdb">ChatWindow::ChatWindow</a></div><div class="ttdeci">ChatWindow(ServerConnection *connection, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> chat.cpp:5</div></div>
+<div class="ttc" id="aclassChatWindow_html_afba470900501094fff293adf05f32510"><div class="ttname"><a href="classChatWindow.html#afba470900501094fff293adf05f32510">ChatWindow::connection</a></div><div class="ttdeci">ServerConnection * connection</div><div class="ttdef"><b>Definition</b> app_windows.h:34</div></div>
+<div class="ttc" id="aclassLoginWindow_html"><div class="ttname"><a href="classLoginWindow.html">LoginWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:20</div></div>
+<div class="ttc" id="aclassLoginWindow_html_a0c49fe788dcce29aa50e7d974e1ad158"><div class="ttname"><a href="classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158">LoginWindow::~LoginWindow</a></div><div class="ttdeci">virtual ~LoginWindow()</div><div class="ttdef"><b>Definition</b> login.cpp:77</div></div>
+<div class="ttc" id="aclassLoginWindow_html_a36d36b418955c37add342ef812e4ffca"><div class="ttname"><a href="classLoginWindow.html#a36d36b418955c37add342ef812e4ffca">LoginWindow::LoginWindow</a></div><div class="ttdeci">LoginWindow(ServerConnection *connection, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> login.cpp:4</div></div>
+<div class="ttc" id="aclassServerConnection_html"><div class="ttname"><a href="classServerConnection.html">ServerConnection</a></div><div class="ttdef"><b>Definition</b> server_connection.h:14</div></div>
+<div class="ttc" id="aserver__connection_8h_html"><div class="ttname"><a href="server__connection_8h.html">server_connection.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

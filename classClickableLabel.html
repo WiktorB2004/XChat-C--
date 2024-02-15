@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>XChat: client/include/app_windows.h File Reference</title>
+<title>XChat: ClickableLabel Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('app__windows_8h.html',''); initResizable(); });
+$(function(){initNavTree('classClickableLabel.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,40 +93,90 @@ $(function(){initNavTree('app__windows_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
-  <div class="headertitle"><div class="title">app_windows.h File Reference</div></div>
+<a href="#signals">Signals</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a>  </div>
+  <div class="headertitle"><div class="title">ClickableLabel Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;QApplication&gt;</code><br />
-<code>#include &lt;QCoreApplication&gt;</code><br />
-<code>#include &lt;QMainWindow&gt;</code><br />
-<code>#include &lt;QLabel&gt;</code><br />
-<code>#include &lt;QGridLayout&gt;</code><br />
-<code>#include &lt;QVBoxLayout&gt;</code><br />
-<code>#include &lt;QHBoxLayout&gt;</code><br />
-<code>#include &lt;QLineEdit&gt;</code><br />
-<code>#include &lt;QPushButton&gt;</code><br />
-<code>#include &lt;QDesktopWidget&gt;</code><br />
-<code>#include &lt;QScreen&gt;</code><br />
-<code>#include &lt;QPixmap&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &quot;<a class="el" href="server__connection_8h_source.html">../include/server_connection.h</a>&quot;</code><br />
-</div>
-<p><a href="app__windows_8h_source.html">Go to the source code of this file.</a></p>
+
+<p><code>#include &lt;<a class="el" href="custom__qelements_8h_source.html">custom_qelements.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ClickableLabel:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classClickableLabel.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLoginWindow.html">LoginWindow</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classChatWindow.html">ChatWindow</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:aba68cb811a595c6d90f5c994f2b31f4b" id="r_aba68cb811a595c6d90f5c994f2b31f4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba68cb811a595c6d90f5c994f2b31f4b">clicked</a> ()</td></tr>
+<tr class="separator:aba68cb811a595c6d90f5c994f2b31f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:ae5c39c11e0c3b36eec0af09a3bdc7218" id="r_ae5c39c11e0c3b36eec0af09a3bdc7218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5c39c11e0c3b36eec0af09a3bdc7218">mousePressEvent</a> (QMouseEvent *event) override</td></tr>
+<tr class="separator:ae5c39c11e0c3b36eec0af09a3bdc7218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aba68cb811a595c6d90f5c994f2b31f4b" name="aba68cb811a595c6d90f5c994f2b31f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba68cb811a595c6d90f5c994f2b31f4b">&#9670;&#160;</a></span>clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClickableLabel::clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5c39c11e0c3b36eec0af09a3bdc7218" name="ae5c39c11e0c3b36eec0af09a3bdc7218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5c39c11e0c3b36eec0af09a3bdc7218">&#9670;&#160;</a></span>mousePressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClickableLabel::mousePressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QMouseEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>client/include/<a class="el" href="custom__qelements_8h_source.html">custom_qelements.h</a></li>
+</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_db3a54907829b36871118d03417739cd.html">client</a></li><li class="navelem"><a class="el" href="dir_5c23080e296bbe846f4ed2d01d7b595d.html">include</a></li><li class="navelem"><a class="el" href="app__windows_8h.html">app_windows.h</a></li>
+    <li class="navelem"><a class="el" href="classClickableLabel.html">ClickableLabel</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
