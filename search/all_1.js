@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['chat_20application_0',['XChat: Real-time Chat Application',['../index.html',1,'']]],
+  ['chat_20application_0',['XChat: Real-time Chat Application',['../index.html#autotoc_md1',1,'']]],
   ['chat_2ecpp_1',['chat.cpp',['../chat_8cpp.html',1,'']]],
   ['chatinput_2',['ChatInput',['../classChatInput.html',1,'ChatInput'],['../classChatInput.html#a3c12b98d38b27a9a5640171bcefd1a78',1,'ChatInput::ChatInput()']]],
   ['chatwindow_3',['ChatWindow',['../classChatWindow.html',1,'ChatWindow'],['../classChatWindow.html#af7f09842d4981a838d6014dc6e9cebdb',1,'ChatWindow::ChatWindow()']]],
@@ -8,7 +8,7 @@ var searchData=
   ['clicked_5',['clicked',['../classClickableLabel.html#aba68cb811a595c6d90f5c994f2b31f4b',1,'ClickableLabel']]],
   ['client_6',['Client',['../classClient.html',1,'Client'],['../classClient.html#a218faae4b216f2bba76f0f6c8612051d',1,'Client::Client()']]],
   ['client_7',['client',['../classServerConnection.html#a8d54af262d949fd1ac268f0bbb647f2f',1,'ServerConnection']]],
-  ['client_20authentication_8',['Client Authentication',['../index.html#autotoc_md9',1,'']]],
+  ['client_20authentication_8',['Client Authentication',['../index.html#autotoc_md10',1,'']]],
   ['client_2ecpp_9',['client.cpp',['../client_8cpp.html',1,'']]],
   ['client_2eh_10',['client.h',['../client_8h.html',1,'']]],
   ['client_5fconnection_2ecpp_11',['client_connection.cpp',['../client__connection_8cpp.html',1,'']]],
@@ -20,7 +20,7 @@ var searchData=
   ['connection_5fstate_17',['connection_state',['../client__connection_8cpp.html#a0fb8c3daa3171af0cfde4bc0d0e2b3c6',1,'client_connection.cpp']]],
   ['connectionstate_18',['ConnectionState',['../client_8h.html#acdd867d72142510ce53521a63a062f9b',1,'client.h']]],
   ['connectionsuccess_19',['connectionSuccess',['../classClient.html#ade3b07b5738ea0e126c069c63b21f606',1,'Client']]],
-  ['contributing_20',['Contributing',['../index.html#autotoc_md11',1,'']]],
+  ['contributing_20',['Contributing',['../index.html#autotoc_md12',1,'']]],
   ['curr_5fclient_21',['curr_client',['../classChatInput.html#a1480df3e27a05d2a63f0f3712820772a',1,'ChatInput']]],
   ['curr_5fmessage_22',['curr_message',['../client__connection_8cpp.html#a6e00a7c1f2dcdeba5733304238c0b0e2',1,'client_connection.cpp']]],
   ['custom_5fqelements_2ecpp_23',['custom_qelements.cpp',['../custom__qelements_8cpp.html',1,'']]],

@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "XChat", "index.html", [
-    [ "XChat: Real-time Chat Application", "index.html", "index" ],
+    [ "Overview", "index.html", "index" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],

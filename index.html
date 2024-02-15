@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>XChat: XChat: Real-time Chat Application</title>
+<title>XChat: Overview</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,13 +92,16 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">XChat: Real-time Chat Application </div></div>
+  <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> XChat is a real-time message sending application built in C++ using the Qt framework. It allows users to exchange messages in real-time via a graphical user interface. The project consists of two main modules: the server and the client.</p>
-<p>App Documentation: <a href="https://wiktorb2004.github.io/XChat-Cpp/">Link</a></p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> This project is a playground that, through prototyping, allows me to learn the functions of the libraries/languages used, and then iteratively build new functionalities. This way of development is based on learning from mistakes, which manifests itself in the implementation of the next iteration, if done correctly, it means that the method used to create a feature is the result of trying many solutions, which ensures that it is properly chosen for the project. In addition it also allows for a quick process of learning the attribues of the languages or libraries that I have never used before.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Features</h1>
+XChat: Real-time Chat Application</h1>
+<p>XChat is a real-time message sending application built in C++ using the Qt framework. It allows users to exchange messages in real-time via a graphical user interface. The project consists of two main modules: the server and the client.</p>
+<p>App Documentation: <a href="https://wiktorb2004.github.io/XChat-Cpp/">Link</a></p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Features</h2>
 <ul>
 <li>Real-time message exchange</li>
 <li>Creating Group chats</li>
@@ -108,16 +111,16 @@ Features</h1>
 <li>Cross-platform support</li>
 <li>User Authentication</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Requirements</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Requirements</h2>
 <ul>
 <li>C++ compiler (supporting C++11 or higher).</li>
 <li>CMake (3.10 or higher).</li>
 <li>Qt framework (5.0 or higher).</li>
 <li>Docker (if running with Docker).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Installation</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Installation</h2>
 <ol type="1">
 <li><p class="startli">Clone the repository:</p>
 <div class="fragment"><div class="line">git clone https://github.com/WiktorB2004/XChat-Cpp.git</div>
@@ -130,10 +133,10 @@ Installation</h1>
 <div class="line">cmake --build build</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Usage</h1>
 <h2><a class="anchor" id="autotoc_md5"></a>
-Running Locally</h2>
+Usage</h2>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Running Locally</h3>
 <ol type="1">
 <li><p class="startli">Start the server (If you want to be a host):</p>
 <div class="fragment"><div class="line">./server/bin/server/</div>
@@ -143,8 +146,8 @@ Running Locally</h2>
 </div><!-- fragment --></li>
 <li>Use the graphical user interface to exchange messages in real-time.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Running with Docker</h2>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Running with Docker</h3>
 <ol type="1">
 <li><p class="startli">Pull the Docker image:</p>
 <div class="fragment"><div class="line">docker pull ghcr.io/wiktorb2004/xchat-cpp/server:master</div>
@@ -154,24 +157,24 @@ Running with Docker</h2>
 <li><p class="startli">Run the Docker container:</p>
 <div class="fragment"></div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md7"></a>
-Authentication</h1>
 <h2><a class="anchor" id="autotoc_md8"></a>
-Server Authentication</h2>
+Authentication</h2>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Server Authentication</h3>
 <ul>
 <li>The server verifies user credentials (username and password) before allowing access to the chat.</li>
 <li>User credentials are securely hashed and stored in the server's database.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Client Authentication</h2>
+<h3><a class="anchor" id="autotoc_md10"></a>
+Client Authentication</h3>
 <ul>
 <li>Users must provide their credentials (username and password) to log in to the chat application.</li>
 <li>Upon successful authentication, users gain access to the chat interface.</li>
 <li>Incorrect credentials result in authentication failure, with appropriate error messages displayed to the user.</li>
 </ul>
 <p>For more details on authentication, refer to the server and client source code.</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Directory Structure</h1>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Directory Structure</h2>
 <div class="fragment"><div class="line">XChat/</div>
 <div class="line">├── .github/              # GitHub folder</div>
 <div class="line">│   └── workflows/        # Workflows folder</div>
@@ -195,14 +198,14 @@ Directory Structure</h1>
 <div class="line">├── README.md             # Project README</div>
 <div class="line">├── LICENSE               # Project LICENSE</div>
 <div class="line">└── CMakeLists.txt        # Main CMakeLists.txt in root directory</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
-Contributing</h1>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
+Contributing</h2>
 <p>Contributions are welcome! Please fork the repository and create a pull request with your proposed changes.</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
-License</h1>
-<p>This project is licensed under the [Apache License](LICENSE).</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
-Attributions</h2>
+License</h2>
+<p>This project is licensed under the [Apache License](LICENSE).</p>
+<h3><a class="anchor" id="autotoc_md14"></a>
+Attributions</h3>
 <p><a href="https://www.flaticon.com/free-icons/send" title="send icons">Send icons created by Freepik - Flaticon</a> <br  />
  <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Uniconlabs - Flaticon</a> <br  />
  <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons created by Ilham Fitrotul Hayat - Flaticon</a> <br  />
