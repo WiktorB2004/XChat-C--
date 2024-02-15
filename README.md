@@ -22,7 +22,7 @@ App Documentation: [Link](https://wiktorb2004.github.io/XChat-Cpp/)
 
 - C++ compiler (supporting C++11 or higher).
 - CMake (3.10 or higher).
-- Qt framework (5.0 or higher).
+- Qt framework (6.0 or higher).
 - Docker (if running with Docker).
 
 ## Installation

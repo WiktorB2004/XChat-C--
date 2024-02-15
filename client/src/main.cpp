@@ -1,11 +1,35 @@
 #include <QThread>
+#include <QDebug>
+#include <QFontDatabase>
+#include <QFont>
 #include "../include/app_windows.h"
 #include "../include/server_connection.h"
 #include "../include/client.h"
 
 int main(int argc, char *argv[])
 {
+
     QApplication app(argc, argv);
+    QString fontFilePath = QCoreApplication::applicationDirPath() + "/../../assets/fonts/Roboto/Roboto-Regular.ttf";
+    int fontId = QFontDatabase::addApplicationFont(fontFilePath);
+    if (fontId == -1)
+    {
+        qDebug() << "Failed to load font from file" << fontFilePath;
+    }
+
+    // Set default font for the application
+    if (fontId != -1)
+    {
+        QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
+        if (!fontFamilies.isEmpty())
+        {
+            QGuiApplication::setFont(QFont("Arial", 10)); // Set your desired font family and size
+        }
+        else
+        {
+            qDebug() << "Failed to retrieve font family";
+        }
+    }
 
     // Create and configure the client
     Client client("Zdzipek", "password", "localhost", 8000);

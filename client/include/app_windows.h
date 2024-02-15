@@ -10,7 +10,6 @@
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QDesktopWidget>
 #include <QScreen>
 #include <QPixmap>
 #include <QDebug>

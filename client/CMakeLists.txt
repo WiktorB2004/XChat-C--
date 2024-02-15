@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find Qt6
-find_package(Qt5 REQUIRED COMPONENTS Core Widgets REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets REQUIRED)
 find_package(Libwebsockets REQUIRED)
 
 # Directories
@@ -33,7 +33,7 @@ set(CLIENT_SOURCES
     ${SOURCE_DIR}/main.cpp
 )
 
-QT5_WRAP_CPP(MOC_FILES
+QT6_WRAP_CPP(MOC_FILES
     ${INCLUDE_DIR}/client.h
     ${INCLUDE_DIR}/app_windows.h
     ${INCLUDE_DIR}/server_connection.h
@@ -43,7 +43,7 @@ QT5_WRAP_CPP(MOC_FILES
 # Executable
 add_executable(client ${CLIENT_SOURCES} ${MOC_FILES})
 
-target_link_libraries(client PRIVATE Qt5::Core Qt5::Widgets)
+target_link_libraries(client PRIVATE Qt6::Core Qt6::Widgets)
 target_link_libraries(client PRIVATE ${LIBWEBSOCKETS_LIBRARIES})
 target_link_libraries(client PRIVATE pthread)
 
