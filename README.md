@@ -1,3 +1,7 @@
+# Overview
+
+This project is a playground that, through prototyping, allows me to learn the functions of the libraries/languages used, and then iteratively build new functionalities. This way of development is based on learning from mistakes, which manifests itself in the implementation of the next iteration, if done correctly, it means that the method used to create a feature is the result of trying many solutions, which ensures that it is properly chosen for the project. In addition it also allows for a quick process of learning the attribues of the languages or libraries that I have never used before.
+
 # XChat: Real-time Chat Application
 
 XChat is a real-time message sending application built in C++ using the Qt framework. It allows users to exchange messages in real-time via a graphical user interface. The project consists of two main modules: the server and the client.
