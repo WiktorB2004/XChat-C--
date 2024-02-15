@@ -7,21 +7,22 @@
 #include <thread>
 #include <chrono>
 #include <string>
+#include <atomic>
 #include "client.h"
 
 class ServerConnection : public QObject
 {
     Q_OBJECT
 public:
-    ServerConnection(Client &client, std::string address, int port)
+    ServerConnection(Client *client, std::string address, int port)
         : client(client), server_address(address), connection_port(port) {}
-    Client &client;
+    std::atomic<Client *> client;
     std::string server_address;
     int connection_port;
 
-public slots:
     int run_server();
-    int send_message();
+
+public slots:
 
 signals:
     // FIXME: Create singals to handle server status management

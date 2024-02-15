@@ -4,6 +4,8 @@
 #include <string>
 #include <QObject>
 #include <libwebsockets.h>
+#include <atomic>
+#include <mutex>
 
 // Define the state of the WebSocket connection
 enum ConnectionState
@@ -31,8 +33,7 @@ public:
 
 signals:
     // FIXME: Create signals to handle user data - inputs, GUI operations etc.
-    void
-    connectionSuccess();
+    void connectionSuccess();
     void sendMessage();
 
 private:

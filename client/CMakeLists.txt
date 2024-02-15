@@ -27,6 +27,7 @@ include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
 set(CLIENT_SOURCES
     ${SOURCE_DIR}/client.cpp
     ${SOURCE_DIR}/client_connection.cpp
+    ${SOURCE_DIR}/custom_qelements.cpp
     ${SOURCE_DIR}/chat.cpp
     ${SOURCE_DIR}/login.cpp
     ${SOURCE_DIR}/main.cpp
@@ -36,6 +37,7 @@ QT5_WRAP_CPP(MOC_FILES
     ${INCLUDE_DIR}/client.h
     ${INCLUDE_DIR}/app_windows.h
     ${INCLUDE_DIR}/server_connection.h
+    ${INCLUDE_DIR}/custom_qelements.h
 )
 
 # Executable

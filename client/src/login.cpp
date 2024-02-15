@@ -1,6 +1,7 @@
 #include "../include/app_windows.h"
+#include "../include/server_connection.h"
 
-LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent)
+LoginWindow::LoginWindow(ServerConnection *connection, QWidget *parent) : QMainWindow(parent)
 {
     // Set the window title
     setWindowTitle("XChat - Login");

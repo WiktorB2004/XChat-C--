@@ -1,6 +1,9 @@
 #include "../include/app_windows.h"
+#include "../include/custom_qelements.h"
+#include "../include/server_connection.h"
 
-ChatWindow::ChatWindow(QWidget *parent) : QMainWindow(parent)
+ChatWindow::ChatWindow(ServerConnection *connection, QWidget *parent)
+    : QMainWindow(parent), connection(connection)
 {
     // Load the image
     QPixmap backgroundImage("assets/images/background.jpg");
@@ -9,30 +12,8 @@ ChatWindow::ChatWindow(QWidget *parent) : QMainWindow(parent)
     QLabel *backgroundLabel = new QLabel(this); // Note: Use "this" as the parent
     backgroundLabel->setPixmap(backgroundImage);
 
-    // Create a QWidget to hold the grid
-    QWidget *gridWidget = new QWidget(this); // Note: Use "this" as the parent
-    QGridLayout *gridLayout = new QGridLayout(gridWidget);
-
-    QLabel *gridLabel = new QLabel(QString("(0, 0)"));
-    gridLabel->setAlignment(Qt::AlignCenter);
-    gridLabel->setStyleSheet("QLabel { background-color: rgba(0, 0, 0, 128); color: white; }"); // Set transparent background
-    gridLayout->addWidget(gridLabel, 0, 0);
-
-    // ----------------------
-
-    QLineEdit *userInputLineEdit = new QLineEdit;
-    QLabel *submitWidget = new QLabel;
-    QPixmap submitImage("assets/images/submit.png");
-    submitWidget->setPixmap(submitImage.scaled(QSize{25, 25}, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));
-
-    // Create a horizontal layout for the form
-    QHBoxLayout *formLayout = new QHBoxLayout;
-    formLayout->addWidget(userInputLineEdit);
-    formLayout->addWidget(submitWidget);
-
-    QWidget *inputWidget = new QWidget();
-    inputWidget->setLayout(formLayout);
-    gridLayout->addWidget(inputWidget, 1, 0);
+    // FIXME: FIX THE SIZING OF gridWidget
+    ChatInput *gridWidget = new ChatInput(this, connection->client, this);
 
     // Create a vertical layout for left column
     QVBoxLayout *leftColumnLayout = new QVBoxLayout();
@@ -40,9 +21,6 @@ ChatWindow::ChatWindow(QWidget *parent) : QMainWindow(parent)
     leftColumnLabel->setAlignment(Qt::AlignCenter);
     leftColumnLabel->setStyleSheet("QLabel { background-color: rgba(0, 0, 0, 128); color: white; }"); // Set transparent background
     leftColumnLayout->addWidget(leftColumnLabel);
-
-    // Set layout for the gridWidget
-    gridWidget->setLayout(gridLayout);
 
     // Set layout for the rows widget
     QWidget *rowsWidget = new QWidget(this);
