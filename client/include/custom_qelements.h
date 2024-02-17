@@ -11,7 +11,6 @@
 #include <iostream>
 #include <atomic>
 #include "app_windows.h"
-#include "client.h"
 #include "app_windows.h"
 
 class ClickableLabel : public QLabel
@@ -34,12 +33,14 @@ protected:
 class ChatInput : public QWidget
 {
     Q_OBJECT
-public:
-    std::atomic<Client *> &curr_client;
-    ChatWindow *window;
-    ChatInput(ChatWindow *window, std::atomic<Client *> &client, QWidget *parent = nullptr) : QWidget(parent), window(window), curr_client(client)
-    {
 
+private:
+    QLineEdit *inputLineEdit;
+
+public:
+    ChatWindow *window;
+    ChatInput(ChatWindow *window, QWidget *parent = nullptr) : window(window), QWidget(parent)
+    {
         // Initialize inputLineEdit
         inputLineEdit = new QLineEdit(this);
 
@@ -67,35 +68,7 @@ public:
 
         // Set layout for the gridWidget
         gridWidget->setLayout(gridLayout);
-
-        // Connect the clicked signal of submitLabel to handleSendMessage slot
-        QObject::connect(submitLabel, &ClickableLabel::clicked, this, &ChatInput::storeInput);
-        QObject::connect(submitLabel, &ClickableLabel::clicked, this, &ChatInput::handleMessageSend);
     }
-
-private slots:
-    void storeInput()
-    {
-        QString inputText = inputLineEdit->text();
-        Client *tmp_client = curr_client.load();
-        tmp_client->message = inputText.toStdString();
-        curr_client.store(tmp_client);
-    }
-
-    void handleMessageSend()
-    {
-        if (curr_client.load() && curr_client.load()->wsi)
-        {
-            lws_callback_on_writable(curr_client.load()->wsi);
-        }
-        else
-        {
-            qDebug("Erorr in handleMessageSend");
-        }
-    }
-
-private:
-    QLineEdit *inputLineEdit;
 };
 
 #endif // CUSTOM_ELEMENTS_H

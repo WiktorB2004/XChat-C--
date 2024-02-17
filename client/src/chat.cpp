@@ -1,9 +1,9 @@
 #include "../include/app_windows.h"
 #include "../include/custom_qelements.h"
-#include "../include/server_connection.h"
+#include "../include/chat_connection.h"
 
-ChatWindow::ChatWindow(ServerConnection *connection, QWidget *parent)
-    : QMainWindow(parent), connection(connection)
+ChatWindow::ChatWindow(QWidget *parent)
+    : QMainWindow(parent)
 {
     // Load the image
     QPixmap backgroundImage("assets/images/background.jpg");
@@ -12,8 +12,7 @@ ChatWindow::ChatWindow(ServerConnection *connection, QWidget *parent)
     QLabel *backgroundLabel = new QLabel(this); // Note: Use "this" as the parent
     backgroundLabel->setPixmap(backgroundImage);
 
-    // FIXME: FIX THE SIZING OF gridWidget
-    ChatInput *gridWidget = new ChatInput(this, connection->client, this);
+    ChatInput *gridWidget = new ChatInput(this);
 
     // Create a vertical layout for left column
     QVBoxLayout *leftColumnLayout = new QVBoxLayout();

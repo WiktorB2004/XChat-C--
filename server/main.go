@@ -50,6 +50,11 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	// Register our new client
 	clients[ws] = true
 
+	// Get the IP address of the connected user
+	ip := r.RemoteAddr
+	// Log the new connection
+	log.Println("New connection established:", ip)
+
 	for {
 		var msg Message
 		// Read in a new message as JSON and map it to a Message object

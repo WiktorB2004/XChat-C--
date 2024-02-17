@@ -7,15 +7,6 @@
 #include <atomic>
 #include <mutex>
 
-// Define the state of the WebSocket connection
-enum ConnectionState
-{
-    CONNECTING,
-    OPEN,
-    CLOSING,
-    CLOSED
-};
-
 class Client : public QObject
 {
     Q_OBJECT

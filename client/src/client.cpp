@@ -1,2 +1,2 @@
 #include "../include/client.h"
-#include "../include/server_connection.h"
+#include "../include/chat_connection.h"

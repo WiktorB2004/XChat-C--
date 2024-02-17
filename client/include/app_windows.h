@@ -13,24 +13,35 @@
 #include <QScreen>
 #include <QPixmap>
 #include <QDebug>
-#include "../include/server_connection.h"
+#include "../include/chat_connection.h"
 
 class LoginWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit LoginWindow(ServerConnection *connection, QWidget *parent = nullptr);
-    virtual ~LoginWindow();
+    explicit LoginWindow(QWidget *parent = nullptr);
+    ~LoginWindow();
+
+private:
+    QLabel *backgroundLabel;
+    QLineEdit *serverIpLineEdit;
+    QLineEdit *usernameLineEdit;
+    QLineEdit *passwordLineEdit;
+    QPushButton *submitButton;
+    QVBoxLayout *formLayout;
+    QHBoxLayout *formMenuLayout;
+    QWidget *formMenuWidget;
+    QWidget *formWidget;
+    QVBoxLayout *centerLayout;
+    QWidget *centralWidget;
 };
 
 class ChatWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit ChatWindow(ServerConnection *connection, QWidget *parent = nullptr);
+    explicit ChatWindow(QWidget *parent = nullptr);
     virtual ~ChatWindow();
-
-    ServerConnection *connection;
 
 private:
 };
