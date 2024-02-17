@@ -47,12 +47,11 @@ jobs:
         run: |
           echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
-      - name: Install qt5
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libssl-dev \
-          qt6-base-dev \
-          qt6-websockets-dev
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.2.2'
+          modules: 'qtcore qtwebsockets'
 
       - name: Move into client/
         run: cd ${{ github.workspace }}/client
