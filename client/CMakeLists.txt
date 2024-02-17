@@ -13,7 +13,6 @@ set(CMAKE_AUTOMOC ON)
 
 # Find Qt6
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets WebSockets REQUIRED)
-find_package(Libwebsockets REQUIRED)
 
 # Directories
 set(SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -22,7 +21,6 @@ set(BIN_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 # Include directories
 include_directories(${INCLUDE_DIR})
-include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
 
 # Source files
 file(GLOB_RECURSE SOURCES "src/*.cpp" "include/*.h")
@@ -31,7 +29,6 @@ file(GLOB_RECURSE SOURCES "src/*.cpp" "include/*.h")
 qt_add_executable(client ${SOURCES})
 
 target_link_libraries(client PUBLIC Qt::Core Qt::Widgets Qt::WebSockets)
-target_link_libraries(client PUBLIC ${LIBWEBSOCKETS_LIBRARIES})
 target_link_libraries(client PUBLIC pthread)
 
 # Set output directory
