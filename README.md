@@ -1,6 +1,6 @@
 # Overview
 
-This project is a playground that, through prototyping, allows me to learn the functions of the libraries/languages used, and then iteratively build new functionalities. This way of development is based on learning from mistakes, which manifests itself in the implementation of the next iteration, if done correctly, it means that the method used to create a feature is the result of trying many solutions, which ensures that it is properly chosen for the project. In addition it also allows for a quick process of learning the attribues of the languages or libraries that I have never used before.
+This project is a playground for prototyping. This allows me to learn the functions of the libraries/languages that are used and then iteratively build new functionalities. This way of development is based on learning from mistakes, which manifests itself in the implementation of the next iteration. If done correctly, it means that the method used to create a feature is the result of trying many solutions, which ensures that it is properly chosen for the project. In addition it also allows for a quick process of learning new language or library features.
 
 # XChat: Real-time Chat Application
 
@@ -106,10 +106,9 @@ XChat/
 ├── .github/              # GitHub folder
 │   └── workflows/        # Workflows folder
 ├── server/               # Server module
-│   ├── src/              # Source files for server
-│   ├── include/          # Header files for server
-│   ├── tests/            # Test files for server
-│   ├── CMakeLists.txt    # CMake configuration for server
+│   ├── go.mod            # Go.mod file
+│   ├── go.sum            # Go.sum file
+│   ├── main.go           # Main server code
 │   └── Dockerfile        # Dockerfile for server module
 │
 ├── client/               # Client module
