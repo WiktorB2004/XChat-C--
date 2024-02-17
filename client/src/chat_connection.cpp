@@ -7,29 +7,38 @@ using namespace std;
 
 QT_USE_NAMESPACE
 
-ClientConnection::ClientConnection(QUrl url, QObject *parent) : url(url), QObject(parent)
+ClientConnection::ClientConnection(QUrl url, QObject *parent) : m_url(url), QObject(parent)
 {
 }
 
 void ClientConnection::start()
 {
-    client.open(url);
-    // Connect to the WebSocket server
-    QObject::connect(&client, &QWebSocket::connected, this, &ClientConnection::onConnected);
-    QObject::connect(&client, &QWebSocket::textMessageReceived, this, &ClientConnection::onTextMessageReceived);
+    // Connect to the WebSocket server or handle errors
+    QObject::connect(&m_client, &QWebSocket::connected, this, &ClientConnection::onConnected);
+    QObject::connect(&m_client, &QWebSocket::textMessageReceived, this, &ClientConnection::onTextMessageReceived);
+    QObject::connect(&m_client, &QWebSocket::errorOccurred, this, &ClientConnection::onError);
+
+    m_client.open(m_url);
 }
 
 void ClientConnection::onConnected()
 {
     qDebug() << "Connected to server";
-    // Create a JSON message
-    QJsonObject message;
-    message["sender"] = "Client";
-    message["content"] = "Hello, server!";
-    QJsonDocument doc(message);
-    QByteArray data = doc.toJson();
-    // Send the message to the server
-    client.sendTextMessage(QString::fromUtf8(data));
+    // // Create a JSON message
+    // QJsonObject message;
+    // message["sender"] = "Client";
+    // message["content"] = "Hello, server!";
+    // QJsonDocument doc(message);
+    // QByteArray data = doc.toJson();
+    // // Send the message to the server
+    // m_client.sendTextMessage(QString::fromUtf8(data));
+    emit connectionSuccess();
+}
+
+void ClientConnection::onError(QAbstractSocket::SocketError error)
+{
+    qDebug() << "Error occurred during connection:" << error;
+    emit connectionFailure();
 }
 
 ClientConnection::~ClientConnection()

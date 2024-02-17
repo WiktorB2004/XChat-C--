@@ -25,19 +25,10 @@ include_directories(${INCLUDE_DIR})
 include_directories(${LIBWEBSOCKETS_INCLUDE_DIRS})
 
 # Source files
-set(CLIENT_SOURCES
-    ${INCLUDE_DIR}/chat_connection.h
-    ${INCLUDE_DIR}/custom_qelements.h
-    ${INCLUDE_DIR}/app_windows.h
-    ${SOURCE_DIR}/chat_connection.cpp
-    ${SOURCE_DIR}/custom_qelements.cpp
-    ${SOURCE_DIR}/chat.cpp
-    ${SOURCE_DIR}/login.cpp
-    ${SOURCE_DIR}/main.cpp
-)
+file(GLOB_RECURSE SOURCES "src/*.cpp" "include/*.h")
 
 # Executable
-qt_add_executable(client ${CLIENT_SOURCES})
+qt_add_executable(client ${SOURCES})
 
 target_link_libraries(client PUBLIC Qt::Core Qt::Widgets Qt::WebSockets)
 target_link_libraries(client PUBLIC ${LIBWEBSOCKETS_LIBRARIES})

@@ -3,27 +3,28 @@
 
 #include <QtCore/QObject>
 #include <QtWebSockets>
-
-QT_FORWARD_DECLARE_CLASS(QWebSocketServer)
-QT_FORWARD_DECLARE_CLASS(QWebSocket)
-QT_FORWARD_DECLARE_CLASS(QString)
+#include "threads.h"
 
 class ClientConnection : public QObject
 {
     Q_OBJECT
 public:
-    
     explicit ClientConnection(QUrl url, QObject *parent = nullptr);
     void start();
     ~ClientConnection() override;
 
-private slots:
-    void onTextMessageReceived(const QString &message);
-    void onConnected();
+protected:
+    QWebSocket m_client;
+    QUrl m_url;
 
-private:
-    QWebSocket client;
-    QUrl url;
+    friend class ServerThread;
+signals:
+    void connectionSuccess();
+    void connectionFailure();
+private slots:
+    void onConnected();
+    void onError(QAbstractSocket::SocketError error);
+    void onTextMessageReceived(const QString &message);
 };
 
 #endif // SERVER_CONNECTION_H

@@ -21,19 +21,21 @@ class LoginWindow : public QMainWindow
 public:
     explicit LoginWindow(QWidget *parent = nullptr);
     ~LoginWindow();
+    QJsonDocument m_inputData;
+
+signals:
+    void loginSuccess();
+    void loginFailure();
+
+private slots:
+    void updateInputData();
+    void loginSubmit();
 
 private:
-    QLabel *backgroundLabel;
     QLineEdit *serverIpLineEdit;
     QLineEdit *usernameLineEdit;
     QLineEdit *passwordLineEdit;
     QPushButton *submitButton;
-    QVBoxLayout *formLayout;
-    QHBoxLayout *formMenuLayout;
-    QWidget *formMenuWidget;
-    QWidget *formWidget;
-    QVBoxLayout *centerLayout;
-    QWidget *centralWidget;
 };
 
 class ChatWindow : public QMainWindow

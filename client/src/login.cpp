@@ -26,11 +26,11 @@ LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent)
 
     // LOGIN FORM
     QLabel *serverIpLabel = new QLabel("Server ip:", this);
-    QLineEdit *serverIpLineEdit = new QLineEdit(this);
+    serverIpLineEdit = new QLineEdit(this);
     QLabel *usernameLabel = new QLabel("Username:", this);
-    QLineEdit *usernameLineEdit = new QLineEdit(this);
+    usernameLineEdit = new QLineEdit(this);
     QLabel *passwordLabel = new QLabel("Password:", this);
-    QLineEdit *passwordLineEdit = new QLineEdit(this);
+    passwordLineEdit = new QLineEdit(this);
     passwordLineEdit->setEchoMode(QLineEdit::Password);
 
     // Create a vertical layout for the form
@@ -80,6 +80,38 @@ LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent)
         QGuiApplication::primaryScreen()->geometry().center().y() - height() / 2,
         width(),
         height());
+
+    // Connect slots
+    QObject::connect(serverIpLineEdit, &QLineEdit::textChanged, this, &LoginWindow::updateInputData);
+    QObject::connect(usernameLineEdit, &QLineEdit::textChanged, this, &LoginWindow::updateInputData);
+    QObject::connect(passwordLineEdit, &QLineEdit::textChanged, this, &LoginWindow::updateInputData);
+    QObject::connect(submitButton, &QPushButton::clicked, this, &LoginWindow::loginSubmit);
+}
+
+void LoginWindow::updateInputData()
+{
+    QJsonObject message;
+    message["serverIp"] = serverIpLineEdit->text();
+    message["username"] = usernameLineEdit->text();
+    message["password"] = passwordLineEdit->text();
+    QJsonDocument doc(message);
+    m_inputData = doc;
+}
+
+void LoginWindow::loginSubmit()
+{
+    QString username = "wiktor";
+    QString password = "1";
+    if (m_inputData.object().value("username").toString() == username && m_inputData.object().value("password").toString() == password)
+    {
+        qDebug() << "User passed correct credentials";
+        emit loginSuccess();
+    }
+    else
+    {
+        qDebug() << "User passed wrong credentials";
+        emit loginFailure();
+    }
 }
 
 LoginWindow::~LoginWindow()

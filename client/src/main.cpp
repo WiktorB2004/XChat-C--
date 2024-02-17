@@ -32,17 +32,30 @@ int main(int argc, char *argv[])
         }
     }
 
-    // Connecting to chat server
-    QUrl url("ws://localhost:8000/ws");
-    ClientConnection client(url);
-
-    QThread serverThread;
-    QObject::connect(&serverThread, &QThread::started, &client, &ClientConnection::start);
-    serverThread.start();
-
-    // Start a LoginWindow instance
+    // Start a LoginWindow instance and wait for the user to input connection data
     LoginWindow loginWindow;
     loginWindow.show();
 
+    // Show login window and validate user
+    QEventLoop eventLoop;
+    QObject::connect(&loginWindow, &LoginWindow::loginSuccess, &eventLoop, &QEventLoop::quit);
+    QObject::connect(&loginWindow, &LoginWindow::loginSuccess, &loginWindow, &LoginWindow::close);
+    eventLoop.exec();
+
+    // Connect to chat server and start chat window
+    QUrl url("ws://" + loginWindow.m_inputData.object().value("serverIp").toString() + "/ws");
+    QThread serverThread;
+    ChatWindow chatWindow;
+    ClientConnection client(url);
+    // Start the connection related thread and window
+    QObject::connect(&serverThread, &QThread::started, &client, &ClientConnection::start);
+    QObject::connect(&client, &ClientConnection::connectionSuccess, &chatWindow, &ChatWindow::show);
+    // Handle connection errors
+    QObject::connect(&client, &ClientConnection::connectionFailure, &app, &QApplication::quit);
+    QObject::connect(&client, &ClientConnection::connectionFailure, &serverThread, &QThread::quit);
+    // Close the thread after closing the chat window
+    serverThread.start();
+
+    serverThread.quit();
     return app.exec();
 }
