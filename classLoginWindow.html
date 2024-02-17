@@ -93,7 +93,9 @@ $(function(){initNavTree('classLoginWindow.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#signals">Signals</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">LoginWindow Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,12 +108,24 @@ Inheritance diagram for LoginWindow:</div>
   <img src="classLoginWindow.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a24839222eae031c12d64d6090da715cf" id="r_a24839222eae031c12d64d6090da715cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24839222eae031c12d64d6090da715cf">loginSuccess</a> ()</td></tr>
+<tr class="separator:a24839222eae031c12d64d6090da715cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08260f7413b07e3bba1db1c57ec13730" id="r_a08260f7413b07e3bba1db1c57ec13730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08260f7413b07e3bba1db1c57ec13730">loginFailure</a> ()</td></tr>
+<tr class="separator:a08260f7413b07e3bba1db1c57ec13730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa4c04d26b299de00156bbf3c32b2a082" id="r_aa4c04d26b299de00156bbf3c32b2a082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:aa4c04d26b299de00156bbf3c32b2a082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c49fe788dcce29aa50e7d974e1ad158" id="r_a0c49fe788dcce29aa50e7d974e1ad158"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c49fe788dcce29aa50e7d974e1ad158">~LoginWindow</a> ()</td></tr>
 <tr class="separator:a0c49fe788dcce29aa50e7d974e1ad158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a1deb84deb710edc42c739d984cd06a40" id="r_a1deb84deb710edc42c739d984cd06a40"><td class="memItemLeft" align="right" valign="top">QJsonDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1deb84deb710edc42c739d984cd06a40">m_inputData</a></td></tr>
+<tr class="separator:a1deb84deb710edc42c739d984cd06a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa4c04d26b299de00156bbf3c32b2a082" name="aa4c04d26b299de00156bbf3c32b2a082"></a>
@@ -150,6 +164,72 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a08260f7413b07e3bba1db1c57ec13730" name="a08260f7413b07e3bba1db1c57ec13730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08260f7413b07e3bba1db1c57ec13730">&#9670;&#160;</a></span>loginFailure</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginWindow::loginFailure </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24839222eae031c12d64d6090da715cf" name="a24839222eae031c12d64d6090da715cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24839222eae031c12d64d6090da715cf">&#9670;&#160;</a></span>loginSuccess</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginWindow::loginSuccess </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a1deb84deb710edc42c739d984cd06a40" name="a1deb84deb710edc42c739d984cd06a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1deb84deb710edc42c739d984cd06a40">&#9670;&#160;</a></span>m_inputData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonDocument LoginWindow::m_inputData</td>
         </tr>
       </table>
 </div><div class="memdoc">

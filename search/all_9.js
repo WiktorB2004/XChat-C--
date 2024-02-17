@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../README_8md.html',1,'']]],
-  ['real_20time_20chat_20application_1',['XChat: Real-time Chat Application',['../index.html#autotoc_md1',1,'']]],
-  ['requirements_2',['Requirements',['../index.html#autotoc_md3',1,'']]],
-  ['running_20locally_3',['Running Locally',['../index.html#autotoc_md6',1,'']]],
-  ['running_20with_20docker_4',['Running with Docker',['../index.html#autotoc_md7',1,'']]]
+  ['server_20authentication_0',['Server Authentication',['../index.html#autotoc_md9',1,'']]],
+  ['serverthread_1',['ServerThread',['../classClientConnection.html#a99e1bc07ccbe495a79af4c532227519c',1,'ClientConnection']]],
+  ['start_2',['start',['../classClientConnection.html#a850e93974ac0867e9a0060deb705eb56',1,'ClientConnection']]],
+  ['structure_3',['Directory Structure',['../index.html#autotoc_md11',1,'']]]
 ];

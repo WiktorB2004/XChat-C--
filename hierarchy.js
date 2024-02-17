@@ -8,7 +8,6 @@ var hierarchy =
       [ "LoginWindow", "classLoginWindow.html", null ]
     ] ],
     [ "QObject", null, [
-      [ "Client", "classClient.html", null ],
       [ "ClientConnection", "classClientConnection.html", null ]
     ] ],
     [ "QWidget", null, [
