@@ -9,7 +9,7 @@ var hierarchy =
     ] ],
     [ "QObject", null, [
       [ "Client", "classClient.html", null ],
-      [ "ServerConnection", "classServerConnection.html", null ]
+      [ "ClientConnection", "classClientConnection.html", null ]
     ] ],
     [ "QWidget", null, [
       [ "ChatInput", "classChatInput.html", null ]

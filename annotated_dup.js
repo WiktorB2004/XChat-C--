@@ -4,6 +4,6 @@ var annotated_dup =
     [ "ChatWindow", "classChatWindow.html", "classChatWindow" ],
     [ "ClickableLabel", "classClickableLabel.html", "classClickableLabel" ],
     [ "Client", "classClient.html", "classClient" ],
-    [ "LoginWindow", "classLoginWindow.html", "classLoginWindow" ],
-    [ "ServerConnection", "classServerConnection.html", "classServerConnection" ]
+    [ "ClientConnection", "classClientConnection.html", "classClientConnection" ],
+    [ "LoginWindow", "classLoginWindow.html", "classLoginWindow" ]
 ];
