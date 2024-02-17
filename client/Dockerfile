@@ -12,9 +12,9 @@ RUN apt-get update \
     && apt-get install -y \
     wget \
     build-essential \
-    libwebsockets-dev \
     libssl-dev \
-    qt6-base-dev
+    qt6-base-dev \
+    qt6-websockets-dev
 
 
 # Install Cmake

@@ -51,8 +51,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y libssl-dev \
-          libwebsockets-dev \
-          qt6-base-dev
+          qt6-base-dev \
+          qt6-websockets-dev
 
       - name: Move into client/
         run: cd ${{ github.workspace }}/client
