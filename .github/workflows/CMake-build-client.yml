@@ -52,6 +52,7 @@ jobs:
         with:
           version: '6.2.2'
           modules: 'qtcore qtwebsockets'
+          setup-python: false
 
       - name: Move into client/
         run: cd ${{ github.workspace }}/client
