@@ -18,7 +18,7 @@ RUN cd /tmp && \
     tar -zxvf cmake-3.28.1.tar.gz && \
     cd cmake-3.28.1 && \
     ./bootstrap && \
-    make && \
+    make -j4 && \
     make install
 
 # Install Qt6.6.2
@@ -28,7 +28,7 @@ RUN cd tmp/ && \
     mkdir -p ~/dev/qt-build && \
     cd ~/dev/qt-build && \
     /tmp/qt-everywhere-src-6.6.2/configure && \
-    cmake --build . --parallel && \
+    cmake --build . -j4 && \
     cmake --install .
 
 ENV PATH="/usr/local/Qt-6.6.2/bin:${PATH}"
