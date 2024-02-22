@@ -93,7 +93,9 @@ $(function(){initNavTree('classChatWindow.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#signals">Signals</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle"><div class="title">ChatWindow Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -106,12 +108,22 @@ Inheritance diagram for ChatWindow:</div>
   <img src="classChatWindow.png" alt=""/>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a2f4757736c516f9aad8160588fd11aad" id="r_a2f4757736c516f9aad8160588fd11aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f4757736c516f9aad8160588fd11aad">sendMessage</a> (QJsonObject msg)</td></tr>
+<tr class="separator:a2f4757736c516f9aad8160588fd11aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a870f144a418794b7da640ceed7af32c9" id="r_a870f144a418794b7da640ceed7af32c9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a870f144a418794b7da640ceed7af32c9">ChatWindow</a> (QWidget *parent=nullptr)</td></tr>
 <tr class="separator:a870f144a418794b7da640ceed7af32c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a100c64a78603b3c65026acfd0b64ad19" id="r_a100c64a78603b3c65026acfd0b64ad19"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a> ()</td></tr>
+<tr class="memitem:a100c64a78603b3c65026acfd0b64ad19" id="r_a100c64a78603b3c65026acfd0b64ad19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a> ()</td></tr>
 <tr class="separator:a100c64a78603b3c65026acfd0b64ad19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a8f6def198861f6e23daa7fe99dc5cc88" id="r_a8f6def198861f6e23daa7fe99dc5cc88"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f6def198861f6e23daa7fe99dc5cc88">m_inputData</a></td></tr>
+<tr class="separator:a8f6def198861f6e23daa7fe99dc5cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a870f144a418794b7da640ceed7af32c9" name="a870f144a418794b7da640ceed7af32c9"></a>
@@ -144,9 +156,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">ChatWindow::~ChatWindow </td>
@@ -155,11 +164,47 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2f4757736c516f9aad8160588fd11aad" name="a2f4757736c516f9aad8160588fd11aad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4757736c516f9aad8160588fd11aad">&#9670;&#160;</a></span>sendMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChatWindow::sendMessage </td>
+          <td>(</td>
+          <td class="paramtype">QJsonObject</td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a8f6def198861f6e23daa7fe99dc5cc88" name="a8f6def198861f6e23daa7fe99dc5cc88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f6def198861f6e23daa7fe99dc5cc88">&#9670;&#160;</a></span>m_inputData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QJsonObject ChatWindow::m_inputData</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

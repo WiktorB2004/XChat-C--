@@ -148,20 +148,31 @@ $(function(){initNavTree('app__windows_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    Q_OBJECT</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classChatWindow.html#a870f144a418794b7da640ceed7af32c9">ChatWindow</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a>();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classChatWindow.html#a8f6def198861f6e23daa7fe99dc5cc88">   47</a></span>    QJsonObject <a class="code hl_variable" href="classChatWindow.html#a8f6def198861f6e23daa7fe99dc5cc88">m_inputData</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>signals:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classChatWindow.html#a2f4757736c516f9aad8160588fd11aad">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classChatWindow.html#a2f4757736c516f9aad8160588fd11aad">sendMessage</a>(QJsonObject msg);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> updateInputData();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> handleMessageSend();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    QLineEdit *messageLineEdit;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#endif </span><span class="comment">// APP_WINDOWS_H</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif </span><span class="comment">// APP_WINDOWS_H</span></div>
 <div class="ttc" id="achat__connection_8h_html"><div class="ttname"><a href="chat__connection_8h.html">chat_connection.h</a></div></div>
 <div class="ttc" id="aclassChatWindow_html"><div class="ttname"><a href="classChatWindow.html">ChatWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:42</div></div>
-<div class="ttc" id="aclassChatWindow_html_a100c64a78603b3c65026acfd0b64ad19"><div class="ttname"><a href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">ChatWindow::~ChatWindow</a></div><div class="ttdeci">virtual ~ChatWindow()</div><div class="ttdef"><b>Definition</b> chat.cpp:45</div></div>
-<div class="ttc" id="aclassChatWindow_html_a870f144a418794b7da640ceed7af32c9"><div class="ttname"><a href="classChatWindow.html#a870f144a418794b7da640ceed7af32c9">ChatWindow::ChatWindow</a></div><div class="ttdeci">ChatWindow(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> chat.cpp:5</div></div>
+<div class="ttc" id="aclassChatWindow_html_a100c64a78603b3c65026acfd0b64ad19"><div class="ttname"><a href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">ChatWindow::~ChatWindow</a></div><div class="ttdeci">~ChatWindow()</div><div class="ttdef"><b>Definition</b> chat.cpp:77</div></div>
+<div class="ttc" id="aclassChatWindow_html_a2f4757736c516f9aad8160588fd11aad"><div class="ttname"><a href="classChatWindow.html#a2f4757736c516f9aad8160588fd11aad">ChatWindow::sendMessage</a></div><div class="ttdeci">void sendMessage(QJsonObject msg)</div></div>
+<div class="ttc" id="aclassChatWindow_html_a870f144a418794b7da640ceed7af32c9"><div class="ttname"><a href="classChatWindow.html#a870f144a418794b7da640ceed7af32c9">ChatWindow::ChatWindow</a></div><div class="ttdeci">ChatWindow(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> chat.cpp:15</div></div>
+<div class="ttc" id="aclassChatWindow_html_a8f6def198861f6e23daa7fe99dc5cc88"><div class="ttname"><a href="classChatWindow.html#a8f6def198861f6e23daa7fe99dc5cc88">ChatWindow::m_inputData</a></div><div class="ttdeci">QJsonObject m_inputData</div><div class="ttdef"><b>Definition</b> app_windows.h:47</div></div>
 <div class="ttc" id="aclassLoginWindow_html"><div class="ttname"><a href="classLoginWindow.html">LoginWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:19</div></div>
 <div class="ttc" id="aclassLoginWindow_html_a08260f7413b07e3bba1db1c57ec13730"><div class="ttname"><a href="classLoginWindow.html#a08260f7413b07e3bba1db1c57ec13730">LoginWindow::loginFailure</a></div><div class="ttdeci">void loginFailure()</div></div>
-<div class="ttc" id="aclassLoginWindow_html_a0c49fe788dcce29aa50e7d974e1ad158"><div class="ttname"><a href="classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158">LoginWindow::~LoginWindow</a></div><div class="ttdeci">~LoginWindow()</div><div class="ttdef"><b>Definition</b> login.cpp:117</div></div>
+<div class="ttc" id="aclassLoginWindow_html_a0c49fe788dcce29aa50e7d974e1ad158"><div class="ttname"><a href="classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158">LoginWindow::~LoginWindow</a></div><div class="ttdeci">~LoginWindow()</div><div class="ttdef"><b>Definition</b> login.cpp:118</div></div>
 <div class="ttc" id="aclassLoginWindow_html_a1deb84deb710edc42c739d984cd06a40"><div class="ttname"><a href="classLoginWindow.html#a1deb84deb710edc42c739d984cd06a40">LoginWindow::m_inputData</a></div><div class="ttdeci">QJsonDocument m_inputData</div><div class="ttdef"><b>Definition</b> app_windows.h:24</div></div>
 <div class="ttc" id="aclassLoginWindow_html_a24839222eae031c12d64d6090da715cf"><div class="ttname"><a href="classLoginWindow.html#a24839222eae031c12d64d6090da715cf">LoginWindow::loginSuccess</a></div><div class="ttdeci">void loginSuccess()</div></div>
 <div class="ttc" id="aclassLoginWindow_html_aa4c04d26b299de00156bbf3c32b2a082"><div class="ttname"><a href="classLoginWindow.html#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow::LoginWindow</a></div><div class="ttdeci">LoginWindow(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> login.cpp:12</div></div>
