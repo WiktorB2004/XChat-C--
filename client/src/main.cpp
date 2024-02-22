@@ -44,16 +44,21 @@ int main(int argc, char *argv[])
 
     // Connect to chat server and start chat window
     QUrl url("ws://" + loginWindow.m_inputData.object().value("serverIp").toString() + "/ws");
-    QThread serverThread;
     ChatWindow chatWindow;
     ClientConnection client(url);
+    QThread serverThread;
     // Start the connection related thread and window
     QObject::connect(&serverThread, &QThread::started, &client, &ClientConnection::start);
     QObject::connect(&client, &ClientConnection::connectionSuccess, &chatWindow, &ChatWindow::show);
     // Handle connection errors
     QObject::connect(&client, &ClientConnection::connectionFailure, &app, &QApplication::quit);
     QObject::connect(&client, &ClientConnection::connectionFailure, &serverThread, &QThread::quit);
-    // Close the thread after closing the chat window
+    // Close the thread after closing window
+    QObject::connect(&chatWindow, &ChatWindow::close, &serverThread, &QThread::quit);
+
+    // Handle message sending
+    QObject::connect(&chatWindow, &ChatWindow::sendMessage, &client, &ClientConnection::sendMessage);
+    QObject::connect(&chatWindow, &ChatWindow::close, &serverThread, &QThread::quit);
     serverThread.start();
 
     serverThread.quit();

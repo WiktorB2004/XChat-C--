@@ -100,6 +100,7 @@ void LoginWindow::updateInputData()
 
 void LoginWindow::loginSubmit()
 {
+    // Implement server-side authentication
     QString username = "wiktor";
     QString password = "1";
     if (m_inputData.object().value("username").toString() == username && m_inputData.object().value("password").toString() == password)

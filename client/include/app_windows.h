@@ -43,9 +43,18 @@ class ChatWindow : public QMainWindow
     Q_OBJECT
 public:
     explicit ChatWindow(QWidget *parent = nullptr);
-    virtual ~ChatWindow();
+    ~ChatWindow();
+    QJsonObject m_inputData;
+
+signals:
+    void sendMessage(QJsonObject msg);
+
+private slots:
+    void updateInputData();
+    void handleMessageSend();
 
 private:
+    QLineEdit *messageLineEdit;
 };
 
 #endif // APP_WINDOWS_H

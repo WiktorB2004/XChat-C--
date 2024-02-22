@@ -21,6 +21,8 @@ protected:
 signals:
     void connectionSuccess();
     void connectionFailure();
+public slots:
+    void sendMessage(QJsonObject msg);
 private slots:
     void onConnected();
     void onError(QAbstractSocket::SocketError error);

@@ -24,15 +24,23 @@ void ClientConnection::start()
 void ClientConnection::onConnected()
 {
     qDebug() << "Connected to server";
-    // // Create a JSON message
-    // QJsonObject message;
-    // message["sender"] = "Client";
-    // message["content"] = "Hello, server!";
-    // QJsonDocument doc(message);
-    // QByteArray data = doc.toJson();
-    // // Send the message to the server
-    // m_client.sendTextMessage(QString::fromUtf8(data));
+    // Create a JSON message
+    QJsonObject message;
+    message["sender"] = "Client";
+    message["content"] = "Connected to server";
+    QJsonDocument doc(message);
+    QByteArray data = doc.toJson();
+    // Send the message to the server
+    m_client.sendTextMessage(QString::fromUtf8(data));
     emit connectionSuccess();
+}
+
+void ClientConnection::sendMessage(QJsonObject msg)
+{
+    msg["sender"] = "Client";
+    QJsonDocument doc(msg);
+    QByteArray data = doc.toJson();
+    m_client.sendTextMessage(data);
 }
 
 void ClientConnection::onError(QAbstractSocket::SocketError error)
