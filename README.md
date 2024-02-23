@@ -88,9 +88,8 @@ This project is a playground for prototyping. This allows me to learn the functi
 2. Run the Docker container:
 
    ```bash
-      docker run ghcr.io/wiktorb2004/xchat-cpp/server:master
-      docker run ghcr.io/wiktorb2004/xchat-cpp/client:master
-
+   docker run ghcr.io/wiktorb2004/xchat-cpp/server:master
+   docker run ghcr.io/wiktorb2004/xchat-cpp/client:master
    ```
 
 ## Authentication
