@@ -101,6 +101,9 @@ $(function(){initNavTree('classChatWindow.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classChatWindow.html" title="The ChatWindow class.">ChatWindow</a> class.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="app__windows_8h_source.html">app_windows.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ChatWindow:</div>
@@ -112,30 +115,40 @@ Inheritance diagram for ChatWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:acd6d870509a15a3b25063a012d132f0f" id="r_acd6d870509a15a3b25063a012d132f0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd6d870509a15a3b25063a012d132f0f">handleMessageRecieve</a> (<a class="el" href="classMessage.html">Message</a> msg)</td></tr>
+<tr class="memdesc:acd6d870509a15a3b25063a012d132f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot to handle received messages.  <br /></td></tr>
 <tr class="separator:acd6d870509a15a3b25063a012d132f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a2f4757736c516f9aad8160588fd11aad" id="r_a2f4757736c516f9aad8160588fd11aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f4757736c516f9aad8160588fd11aad">sendMessage</a> (QJsonObject msg)</td></tr>
+<tr class="memdesc:a2f4757736c516f9aad8160588fd11aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal to send a message.  <br /></td></tr>
 <tr class="separator:a2f4757736c516f9aad8160588fd11aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a52806658e0156c5c00d85e2b19153dfa" id="r_a52806658e0156c5c00d85e2b19153dfa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52806658e0156c5c00d85e2b19153dfa">ChatWindow</a> (QString client_username, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a52806658e0156c5c00d85e2b19153dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Chat Window object.  <br /></td></tr>
 <tr class="separator:a52806658e0156c5c00d85e2b19153dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a100c64a78603b3c65026acfd0b64ad19" id="r_a100c64a78603b3c65026acfd0b64ad19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a100c64a78603b3c65026acfd0b64ad19">~ChatWindow</a> ()</td></tr>
+<tr class="memdesc:a100c64a78603b3c65026acfd0b64ad19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Chat Window object.  <br /></td></tr>
 <tr class="separator:a100c64a78603b3c65026acfd0b64ad19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc97c29a7f7b8ba313a63cf532876969" id="r_abc97c29a7f7b8ba313a63cf532876969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc97c29a7f7b8ba313a63cf532876969">updateMessageList</a> ()</td></tr>
+<tr class="memdesc:abc97c29a7f7b8ba313a63cf532876969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the message list.  <br /></td></tr>
 <tr class="separator:abc97c29a7f7b8ba313a63cf532876969"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a8f6def198861f6e23daa7fe99dc5cc88" id="r_a8f6def198861f6e23daa7fe99dc5cc88"><td class="memItemLeft" align="right" valign="top">QJsonObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8f6def198861f6e23daa7fe99dc5cc88">m_inputData</a></td></tr>
+<tr class="memdesc:a8f6def198861f6e23daa7fe99dc5cc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">The value of line edits inside chat window.  <br /></td></tr>
 <tr class="separator:a8f6def198861f6e23daa7fe99dc5cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3513cbcca4903d378fe66f474b109501" id="r_a3513cbcca4903d378fe66f474b109501"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMessage.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3513cbcca4903d378fe66f474b109501">message_list</a></td></tr>
+<tr class="memdesc:a3513cbcca4903d378fe66f474b109501"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of messages.  <br /></td></tr>
 <tr class="separator:a3513cbcca4903d378fe66f474b109501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classChatWindow.html" title="The ChatWindow class.">ChatWindow</a> class. </p>
+<p>This class represents the chat window of the application. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52806658e0156c5c00d85e2b19153dfa" name="a52806658e0156c5c00d85e2b19153dfa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52806658e0156c5c00d85e2b19153dfa">&#9670;&#160;</a></span>ChatWindow()</h2>
 
@@ -163,6 +176,15 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a new Chat Window object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client_username</td><td>The username of the client. </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a100c64a78603b3c65026acfd0b64ad19" name="a100c64a78603b3c65026acfd0b64ad19"></a>
@@ -179,6 +201,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroy the Chat Window object. </p>
 
 </div>
 </div>
@@ -206,6 +230,14 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Slot to handle received messages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The received message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2f4757736c516f9aad8160588fd11aad" name="a2f4757736c516f9aad8160588fd11aad"></a>
@@ -231,6 +263,14 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal to send a message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The message to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="abc97c29a7f7b8ba313a63cf532876969" name="abc97c29a7f7b8ba313a63cf532876969"></a>
@@ -248,6 +288,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Refresh the message list. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
@@ -263,6 +305,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The value of line edits inside chat window. </p>
+
 </div>
 </div>
 <a id="a3513cbcca4903d378fe66f474b109501" name="a3513cbcca4903d378fe66f474b109501"></a>
@@ -276,6 +320,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The list of messages. </p>
 
 </div>
 </div>

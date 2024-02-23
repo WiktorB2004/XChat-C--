@@ -100,6 +100,9 @@ $(function(){initNavTree('classLoginWindow.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classLoginWindow.html" title="The LoginWindow class.">LoginWindow</a> class.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="app__windows_8h_source.html">app_windows.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LoginWindow:</div>
@@ -111,23 +114,31 @@ Inheritance diagram for LoginWindow:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a24839222eae031c12d64d6090da715cf" id="r_a24839222eae031c12d64d6090da715cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24839222eae031c12d64d6090da715cf">loginSuccess</a> ()</td></tr>
+<tr class="memdesc:a24839222eae031c12d64d6090da715cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when login is successful.  <br /></td></tr>
 <tr class="separator:a24839222eae031c12d64d6090da715cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08260f7413b07e3bba1db1c57ec13730" id="r_a08260f7413b07e3bba1db1c57ec13730"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08260f7413b07e3bba1db1c57ec13730">loginFailure</a> ()</td></tr>
+<tr class="memdesc:a08260f7413b07e3bba1db1c57ec13730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when login is unsuccessful.  <br /></td></tr>
 <tr class="separator:a08260f7413b07e3bba1db1c57ec13730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa4c04d26b299de00156bbf3c32b2a082" id="r_aa4c04d26b299de00156bbf3c32b2a082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c04d26b299de00156bbf3c32b2a082">LoginWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aa4c04d26b299de00156bbf3c32b2a082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Login Window object.  <br /></td></tr>
 <tr class="separator:aa4c04d26b299de00156bbf3c32b2a082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c49fe788dcce29aa50e7d974e1ad158" id="r_a0c49fe788dcce29aa50e7d974e1ad158"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c49fe788dcce29aa50e7d974e1ad158">~LoginWindow</a> ()</td></tr>
+<tr class="memdesc:a0c49fe788dcce29aa50e7d974e1ad158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Login Window object.  <br /></td></tr>
 <tr class="separator:a0c49fe788dcce29aa50e7d974e1ad158"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a1deb84deb710edc42c739d984cd06a40" id="r_a1deb84deb710edc42c739d984cd06a40"><td class="memItemLeft" align="right" valign="top">QJsonDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1deb84deb710edc42c739d984cd06a40">m_inputData</a></td></tr>
+<tr class="memdesc:a1deb84deb710edc42c739d984cd06a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The data of each user input in JSON format.  <br /></td></tr>
 <tr class="separator:a1deb84deb710edc42c739d984cd06a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classLoginWindow.html" title="The LoginWindow class.">LoginWindow</a> class. </p>
+<p>This class represents the login window of the application. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa4c04d26b299de00156bbf3c32b2a082" name="aa4c04d26b299de00156bbf3c32b2a082"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4c04d26b299de00156bbf3c32b2a082">&#9670;&#160;</a></span>LoginWindow()</h2>
 
@@ -151,6 +162,14 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a new Login Window object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0c49fe788dcce29aa50e7d974e1ad158" name="a0c49fe788dcce29aa50e7d974e1ad158"></a>
@@ -167,6 +186,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroy the Login Window object. </p>
 
 </div>
 </div>
@@ -194,6 +215,8 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal emitted when login is unsuccessful. </p>
+
 </div>
 </div>
 <a id="a24839222eae031c12d64d6090da715cf" name="a24839222eae031c12d64d6090da715cf"></a>
@@ -219,6 +242,8 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal emitted when login is successful. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
@@ -233,6 +258,9 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The data of each user input in JSON format. </p>
+<p>It stores values of username, password and serever ip. </p>
 
 </div>
 </div>

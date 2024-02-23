@@ -102,6 +102,9 @@ $(function(){initNavTree('classClientConnection.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="classClientConnection.html" title="The ClientConnection class.">ClientConnection</a> class.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="chat__connection_8h_source.html">chat_connection.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ClientConnection:</div>
@@ -113,24 +116,31 @@ Inheritance diagram for ClientConnection:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a7490b3d30edb375479fb06ec81b8b27e" id="r_a7490b3d30edb375479fb06ec81b8b27e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7490b3d30edb375479fb06ec81b8b27e">sendMessage</a> (QJsonObject msg)</td></tr>
+<tr class="memdesc:a7490b3d30edb375479fb06ec81b8b27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot to send a message to the server.  <br /></td></tr>
 <tr class="separator:a7490b3d30edb375479fb06ec81b8b27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:ab33acbfb4bad0d3aa96923efbef3db0e" id="r_ab33acbfb4bad0d3aa96923efbef3db0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab33acbfb4bad0d3aa96923efbef3db0e">connectionSuccess</a> ()</td></tr>
+<tr class="memdesc:ab33acbfb4bad0d3aa96923efbef3db0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the connection to the server is successful.  <br /></td></tr>
 <tr class="separator:ab33acbfb4bad0d3aa96923efbef3db0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a391cc38c6e013651bb7909a804e35893" id="r_a391cc38c6e013651bb7909a804e35893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391cc38c6e013651bb7909a804e35893">connectionFailure</a> ()</td></tr>
+<tr class="memdesc:a391cc38c6e013651bb7909a804e35893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the connection to the server fails.  <br /></td></tr>
 <tr class="separator:a391cc38c6e013651bb7909a804e35893"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c962e9052027b23243468c05357d13e" id="r_a6c962e9052027b23243468c05357d13e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c962e9052027b23243468c05357d13e">recievedMessage</a> (<a class="el" href="classMessage.html">Message</a> msg)</td></tr>
+<tr class="memdesc:a6c962e9052027b23243468c05357d13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a message is received from the server.  <br /></td></tr>
 <tr class="separator:a6c962e9052027b23243468c05357d13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a65ad1503a2be291fde3325c1be792626" id="r_a65ad1503a2be291fde3325c1be792626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65ad1503a2be291fde3325c1be792626">ClientConnection</a> (QUrl url, QString client_username, QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:a65ad1503a2be291fde3325c1be792626"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClientConnection.html" title="The ClientConnection class.">ClientConnection</a> constructor.  <br /></td></tr>
 <tr class="separator:a65ad1503a2be291fde3325c1be792626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850e93974ac0867e9a0060deb705eb56" id="r_a850e93974ac0867e9a0060deb705eb56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a850e93974ac0867e9a0060deb705eb56">start</a> ()</td></tr>
+<tr class="memdesc:a850e93974ac0867e9a0060deb705eb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the connection to the server.  <br /></td></tr>
 <tr class="separator:a850e93974ac0867e9a0060deb705eb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e16c3f4219e801c7f4179919b5ffd54" id="r_a9e16c3f4219e801c7f4179919b5ffd54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e16c3f4219e801c7f4179919b5ffd54">~ClientConnection</a> () override</td></tr>
+<tr class="memdesc:a9e16c3f4219e801c7f4179919b5ffd54"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classClientConnection.html" title="The ClientConnection class.">ClientConnection</a> destructor.  <br /></td></tr>
 <tr class="separator:a9e16c3f4219e801c7f4179919b5ffd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -145,7 +155,10 @@ Friends</h2></td></tr>
 <tr class="memitem:a99e1bc07ccbe495a79af4c532227519c" id="r_a99e1bc07ccbe495a79af4c532227519c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99e1bc07ccbe495a79af4c532227519c">ServerThread</a></td></tr>
 <tr class="separator:a99e1bc07ccbe495a79af4c532227519c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classClientConnection.html" title="The ClientConnection class.">ClientConnection</a> class. </p>
+<p>This class represents a connection to a server using WebSocket protocol. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a65ad1503a2be291fde3325c1be792626" name="a65ad1503a2be291fde3325c1be792626"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65ad1503a2be291fde3325c1be792626">&#9670;&#160;</a></span>ClientConnection()</h2>
 
@@ -178,6 +191,16 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p><a class="el" href="classClientConnection.html" title="The ClientConnection class.">ClientConnection</a> constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url</td><td>The URL of the server. </td></tr>
+    <tr><td class="paramname">client_username</td><td>The username of the client. </td></tr>
+    <tr><td class="paramname">parent</td><td>The parent QObject. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9e16c3f4219e801c7f4179919b5ffd54" name="a9e16c3f4219e801c7f4179919b5ffd54"></a>
@@ -202,6 +225,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classClientConnection.html" title="The ClientConnection class.">ClientConnection</a> destructor. </p>
 
 </div>
 </div>
@@ -229,6 +254,8 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal emitted when the connection to the server fails. </p>
+
 </div>
 </div>
 <a id="ab33acbfb4bad0d3aa96923efbef3db0e" name="ab33acbfb4bad0d3aa96923efbef3db0e"></a>
@@ -253,6 +280,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Signal emitted when the connection to the server is successful. </p>
 
 </div>
 </div>
@@ -279,6 +308,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal emitted when a message is received from the server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The received message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a7490b3d30edb375479fb06ec81b8b27e" name="a7490b3d30edb375479fb06ec81b8b27e"></a>
@@ -304,6 +341,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Slot to send a message to the server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The message to send. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a850e93974ac0867e9a0060deb705eb56" name="a850e93974ac0867e9a0060deb705eb56"></a>
@@ -320,6 +365,8 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Starts the connection to the server. </p>
 
 </div>
 </div>
@@ -366,6 +413,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The WebSocket client. </p>
 
 </div>
 </div>
@@ -388,6 +436,7 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>The URL of the server. </p>
 
 </div>
 </div>
