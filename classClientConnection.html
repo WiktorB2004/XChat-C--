@@ -121,11 +121,13 @@ Signals</h2></td></tr>
 <tr class="separator:ab33acbfb4bad0d3aa96923efbef3db0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a391cc38c6e013651bb7909a804e35893" id="r_a391cc38c6e013651bb7909a804e35893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391cc38c6e013651bb7909a804e35893">connectionFailure</a> ()</td></tr>
 <tr class="separator:a391cc38c6e013651bb7909a804e35893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c962e9052027b23243468c05357d13e" id="r_a6c962e9052027b23243468c05357d13e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c962e9052027b23243468c05357d13e">recievedMessage</a> (<a class="el" href="classMessage.html">Message</a> msg)</td></tr>
+<tr class="separator:a6c962e9052027b23243468c05357d13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:accaf11ac6fe47c3e792724424d5c3340" id="r_accaf11ac6fe47c3e792724424d5c3340"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#accaf11ac6fe47c3e792724424d5c3340">ClientConnection</a> (QUrl url, QObject *parent=nullptr)</td></tr>
-<tr class="separator:accaf11ac6fe47c3e792724424d5c3340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ad1503a2be291fde3325c1be792626" id="r_a65ad1503a2be291fde3325c1be792626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65ad1503a2be291fde3325c1be792626">ClientConnection</a> (QUrl url, QString client_username, QObject *parent=nullptr)</td></tr>
+<tr class="separator:a65ad1503a2be291fde3325c1be792626"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a850e93974ac0867e9a0060deb705eb56" id="r_a850e93974ac0867e9a0060deb705eb56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a850e93974ac0867e9a0060deb705eb56">start</a> ()</td></tr>
 <tr class="separator:a850e93974ac0867e9a0060deb705eb56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e16c3f4219e801c7f4179919b5ffd54" id="r_a9e16c3f4219e801c7f4179919b5ffd54"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e16c3f4219e801c7f4179919b5ffd54">~ClientConnection</a> () override</td></tr>
@@ -144,8 +146,8 @@ Friends</h2></td></tr>
 <tr class="separator:a99e1bc07ccbe495a79af4c532227519c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="accaf11ac6fe47c3e792724424d5c3340" name="accaf11ac6fe47c3e792724424d5c3340"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accaf11ac6fe47c3e792724424d5c3340">&#9670;&#160;</a></span>ClientConnection()</h2>
+<a id="a65ad1503a2be291fde3325c1be792626" name="a65ad1503a2be291fde3325c1be792626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ad1503a2be291fde3325c1be792626">&#9670;&#160;</a></span>ClientConnection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,6 +159,11 @@ Friends</h2></td></tr>
           <td class="memname">QT_USE_NAMESPACE ClientConnection::ClientConnection </td>
           <td>(</td>
           <td class="paramtype">QUrl</td>          <td class="paramname"><span class="paramname"><em>url</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>client_username</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -237,6 +244,31 @@ Friends</h2></td></tr>
           <td class="memname">void ClientConnection::connectionSuccess </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c962e9052027b23243468c05357d13e" name="a6c962e9052027b23243468c05357d13e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c962e9052027b23243468c05357d13e">&#9670;&#160;</a></span>recievedMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientConnection::recievedMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMessage.html">Message</a></td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

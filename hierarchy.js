@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "Message", "classMessage.html", null ],
     [ "QLabel", null, [
       [ "ClickableLabel", "classClickableLabel.html", null ]
     ] ],
@@ -9,8 +10,5 @@ var hierarchy =
     ] ],
     [ "QObject", null, [
       [ "ClientConnection", "classClientConnection.html", null ]
-    ] ],
-    [ "QWidget", null, [
-      [ "ChatInput", "classChatInput.html", null ]
     ] ]
 ];

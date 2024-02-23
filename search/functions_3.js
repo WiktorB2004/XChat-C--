@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['sendmessage_0',['sendMessage',['../classChatWindow.html#a2f4757736c516f9aad8160588fd11aad',1,'ChatWindow::sendMessage()'],['../classClientConnection.html#a7490b3d30edb375479fb06ec81b8b27e',1,'ClientConnection::sendMessage(QJsonObject msg)']]],
-  ['start_1',['start',['../classClientConnection.html#a850e93974ac0867e9a0060deb705eb56',1,'ClientConnection']]]
+  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['message_1',['Message',['../classMessage.html#a41b2f4a74b64ee14b47372fc5a31edca',1,'Message']]],
+  ['mousepressevent_2',['mousePressEvent',['../classClickableLabel.html#ae5c39c11e0c3b36eec0af09a3bdc7218',1,'ClickableLabel']]]
 ];

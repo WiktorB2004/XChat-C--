@@ -136,57 +136,8 @@ $(function(){initNavTree('custom__qelements_8h_source.html',''); initResizable()
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classChatInput.html">   33</a></span><span class="keyword">class </span><a class="code hl_class" href="classChatInput.html">ChatInput</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    Q_OBJECT</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QLineEdit *inputLineEdit;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff">   41</a></span>    <a class="code hl_class" href="classChatWindow.html">ChatWindow</a> *<a class="code hl_variable" href="classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff">window</a>;</div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classChatInput.html#aa00d5ad246554502018644451dafae57">   42</a></span>    <a class="code hl_function" href="classChatInput.html#aa00d5ad246554502018644451dafae57">ChatInput</a>(<a class="code hl_class" href="classChatWindow.html">ChatWindow</a> *<a class="code hl_variable" href="classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff">window</a>, QWidget *parent = <span class="keyword">nullptr</span>) : <a class="code hl_variable" href="classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff">window</a>(<a class="code hl_variable" href="classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff">window</a>), QWidget(parent)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <span class="comment">// Initialize inputLineEdit</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        inputLineEdit = <span class="keyword">new</span> QLineEdit(<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="comment">// Create a QWidget to hold the grid</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        QWidget *gridWidget = <span class="keyword">new</span> QWidget(<span class="keyword">this</span>); <span class="comment">// Note: Use &quot;this&quot; as the parent</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        QGridLayout *gridLayout = <span class="keyword">new</span> QGridLayout(gridWidget);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        QLabel *gridLabel = <span class="keyword">new</span> QLabel(QString(<span class="stringliteral">&quot;(0, 0)&quot;</span>));</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        gridLabel-&gt;setAlignment(Qt::AlignCenter);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        gridLabel-&gt;setStyleSheet(<span class="stringliteral">&quot;QLabel { background-color: rgba(0, 0, 0, 128); color: white; }&quot;</span>); <span class="comment">// Set transparent background</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        gridLayout-&gt;addWidget(gridLabel, 0, 0);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_class" href="classClickableLabel.html">ClickableLabel</a> *submitLabel = <span class="keyword">new</span> <a class="code hl_class" href="classClickableLabel.html">ClickableLabel</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        QPixmap submitImage(<span class="stringliteral">&quot;assets/images/submit.png&quot;</span>);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        submitLabel-&gt;setPixmap(submitImage.scaled(QSize{25, 25}, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="comment">// Create a horizontal layout for the form</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        QHBoxLayout *formLayout = <span class="keyword">new</span> QHBoxLayout;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        formLayout-&gt;addWidget(inputLineEdit);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        formLayout-&gt;addWidget(submitLabel);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        QWidget *inputWidget = <span class="keyword">new</span> QWidget();</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        inputWidget-&gt;setLayout(formLayout);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        gridLayout-&gt;addWidget(inputWidget, 1, 0);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="comment">// Set layout for the gridWidget</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        gridWidget-&gt;setLayout(gridLayout);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>};</div>
-</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">// CUSTOM_ELEMENTS_H</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif </span><span class="comment">// CUSTOM_ELEMENTS_H</span></div>
 <div class="ttc" id="aapp__windows_8h_html"><div class="ttname"><a href="app__windows_8h.html">app_windows.h</a></div></div>
-<div class="ttc" id="aclassChatInput_html"><div class="ttname"><a href="classChatInput.html">ChatInput</a></div><div class="ttdef"><b>Definition</b> custom_qelements.h:34</div></div>
-<div class="ttc" id="aclassChatInput_html_a573e3e24d2b5c04d18e56fd4a8c3a9ff"><div class="ttname"><a href="classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff">ChatInput::window</a></div><div class="ttdeci">ChatWindow * window</div><div class="ttdef"><b>Definition</b> custom_qelements.h:41</div></div>
-<div class="ttc" id="aclassChatInput_html_aa00d5ad246554502018644451dafae57"><div class="ttname"><a href="classChatInput.html#aa00d5ad246554502018644451dafae57">ChatInput::ChatInput</a></div><div class="ttdeci">ChatInput(ChatWindow *window, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> custom_qelements.h:42</div></div>
-<div class="ttc" id="aclassChatWindow_html"><div class="ttname"><a href="classChatWindow.html">ChatWindow</a></div><div class="ttdef"><b>Definition</b> app_windows.h:42</div></div>
 <div class="ttc" id="aclassClickableLabel_html"><div class="ttname"><a href="classClickableLabel.html">ClickableLabel</a></div><div class="ttdef"><b>Definition</b> custom_qelements.h:17</div></div>
 <div class="ttc" id="aclassClickableLabel_html_aba68cb811a595c6d90f5c994f2b31f4b"><div class="ttname"><a href="classClickableLabel.html#aba68cb811a595c6d90f5c994f2b31f4b">ClickableLabel::clicked</a></div><div class="ttdeci">void clicked()</div></div>
 <div class="ttc" id="aclassClickableLabel_html_ae5c39c11e0c3b36eec0af09a3bdc7218"><div class="ttname"><a href="classClickableLabel.html#ae5c39c11e0c3b36eec0af09a3bdc7218">ClickableLabel::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdef"><b>Definition</b> custom_qelements.h:23</div></div>

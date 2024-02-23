@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['window_0',['window',['../classChatInput.html#a573e3e24d2b5c04d18e56fd4a8c3a9ff',1,'ChatInput']]],
-  ['with_20docker_1',['Running with Docker',['../index.html#autotoc_md7',1,'']]]
+  ['updatemessagelist_0',['updateMessageList',['../classChatWindow.html#abc97c29a7f7b8ba313a63cf532876969',1,'ChatWindow']]],
+  ['usage_1',['Usage',['../index.html#autotoc_md5',1,'']]]
 ];
