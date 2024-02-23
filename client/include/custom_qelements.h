@@ -30,45 +30,4 @@ protected:
     }
 };
 
-class ChatInput : public QWidget
-{
-    Q_OBJECT
-
-private:
-    QLineEdit *inputLineEdit;
-
-public:
-    ChatWindow *window;
-    ChatInput(ChatWindow *window, QWidget *parent = nullptr) : window(window), QWidget(parent)
-    {
-        // Initialize inputLineEdit
-        inputLineEdit = new QLineEdit(this);
-
-        // Create a QWidget to hold the grid
-        QWidget *gridWidget = new QWidget(this); // Note: Use "this" as the parent
-        QGridLayout *gridLayout = new QGridLayout(gridWidget);
-
-        QLabel *gridLabel = new QLabel(QString("(0, 0)"));
-        gridLabel->setAlignment(Qt::AlignCenter);
-        gridLabel->setStyleSheet("QLabel { background-color: rgba(0, 0, 0, 128); color: white; }"); // Set transparent background
-        gridLayout->addWidget(gridLabel, 0, 0);
-
-        ClickableLabel *submitLabel = new ClickableLabel;
-        QPixmap submitImage("assets/images/submit.png");
-        submitLabel->setPixmap(submitImage.scaled(QSize{25, 25}, Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation));
-
-        // Create a horizontal layout for the form
-        QHBoxLayout *formLayout = new QHBoxLayout;
-        formLayout->addWidget(inputLineEdit);
-        formLayout->addWidget(submitLabel);
-
-        QWidget *inputWidget = new QWidget();
-        inputWidget->setLayout(formLayout);
-        gridLayout->addWidget(inputWidget, 1, 0);
-
-        // Set layout for the gridWidget
-        gridWidget->setLayout(gridLayout);
-    }
-};
-
 #endif // CUSTOM_ELEMENTS_H

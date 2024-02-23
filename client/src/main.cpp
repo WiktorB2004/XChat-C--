@@ -43,9 +43,10 @@ int main(int argc, char *argv[])
     eventLoop.exec();
 
     // Connect to chat server and start chat window
+    QString client_username = loginWindow.m_inputData.object().value("username").toString();
     QUrl url("ws://" + loginWindow.m_inputData.object().value("serverIp").toString() + "/ws");
-    ChatWindow chatWindow;
-    ClientConnection client(url);
+    ChatWindow chatWindow(client_username);
+    ClientConnection client(url, client_username);
     QThread serverThread;
     // Start the connection related thread and window
     QObject::connect(&serverThread, &QThread::started, &client, &ClientConnection::start);
@@ -59,6 +60,8 @@ int main(int argc, char *argv[])
     // Handle message sending
     QObject::connect(&chatWindow, &ChatWindow::sendMessage, &client, &ClientConnection::sendMessage);
     QObject::connect(&chatWindow, &ChatWindow::close, &serverThread, &QThread::quit);
+    // Handle message recieving
+    QObject::connect(&client, &ClientConnection::recievedMessage, &chatWindow, &ChatWindow::handleMessageRecieve);
     serverThread.start();
 
     serverThread.quit();

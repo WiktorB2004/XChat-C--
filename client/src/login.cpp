@@ -7,6 +7,7 @@
 #include <QHBoxLayout>
 #include <QPixmap>
 #include <QScreen>
+#include <QJsonObject>
 #include "../include/app_windows.h"
 
 LoginWindow::LoginWindow(QWidget *parent) : QMainWindow(parent)
@@ -103,7 +104,8 @@ void LoginWindow::loginSubmit()
     // Implement server-side authentication
     QString username = "wiktor";
     QString password = "1";
-    if (m_inputData.object().value("username").toString() == username && m_inputData.object().value("password").toString() == password)
+    // FIXME: Implement real authentication
+    if (/*m_inputData.object().value("username").toString() == username  &&*/ m_inputData.object().value("password").toString() == password)
     {
         qDebug() << "User passed correct credentials";
         emit loginSuccess();

@@ -3,13 +3,13 @@
 
 #include <QtCore/QObject>
 #include <QtWebSockets>
-#include "threads.h"
+#include "message.h"
 
 class ClientConnection : public QObject
 {
     Q_OBJECT
 public:
-    explicit ClientConnection(QUrl url, QObject *parent = nullptr);
+    explicit ClientConnection(QUrl url, QString client_username, QObject *parent = nullptr);
     void start();
     ~ClientConnection() override;
 
@@ -18,9 +18,13 @@ protected:
     QUrl m_url;
 
     friend class ServerThread;
+
+private:
+    QString client_username;
 signals:
     void connectionSuccess();
     void connectionFailure();
+    void recievedMessage(Message msg);
 public slots:
     void sendMessage(QJsonObject msg);
 private slots:

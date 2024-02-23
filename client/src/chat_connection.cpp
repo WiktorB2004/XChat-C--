@@ -7,7 +7,7 @@ using namespace std;
 
 QT_USE_NAMESPACE
 
-ClientConnection::ClientConnection(QUrl url, QObject *parent) : m_url(url), QObject(parent)
+ClientConnection::ClientConnection(QUrl url, QString client_username, QObject *parent) : m_url(url), client_username(client_username), QObject(parent)
 {
 }
 
@@ -24,20 +24,12 @@ void ClientConnection::start()
 void ClientConnection::onConnected()
 {
     qDebug() << "Connected to server";
-    // Create a JSON message
-    QJsonObject message;
-    message["sender"] = "Client";
-    message["content"] = "Connected to server";
-    QJsonDocument doc(message);
-    QByteArray data = doc.toJson();
-    // Send the message to the server
-    m_client.sendTextMessage(QString::fromUtf8(data));
     emit connectionSuccess();
 }
 
 void ClientConnection::sendMessage(QJsonObject msg)
 {
-    msg["sender"] = "Client";
+    msg["sender"] = client_username;
     QJsonDocument doc(msg);
     QByteArray data = doc.toJson();
     m_client.sendTextMessage(data);
@@ -56,4 +48,25 @@ ClientConnection::~ClientConnection()
 void ClientConnection::onTextMessageReceived(const QString &message)
 {
     qDebug() << "Received message from server:" << message;
+    QJsonObject msg_json;
+    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
+
+    if (!doc.isNull())
+    {
+        if (doc.isObject())
+        {
+            msg_json = doc.object();
+        }
+        else
+        {
+            qDebug() << "Document is not an object";
+        }
+    }
+    else
+    {
+        qDebug() << "Invalid JSON: " << message;
+    }
+
+    Message msg(msg_json.value("sender").toString(), msg_json.value("content").toString());
+    emit recievedMessage(msg);
 }

@@ -13,7 +13,9 @@
 #include <QScreen>
 #include <QPixmap>
 #include <QDebug>
-#include "../include/chat_connection.h"
+#include <QJsonDocument>
+#include <QJsonObject>
+#include "message.h"
 
 class LoginWindow : public QMainWindow
 {
@@ -42,12 +44,18 @@ class ChatWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit ChatWindow(QWidget *parent = nullptr);
+    explicit ChatWindow(QString client_username, QWidget *parent = nullptr);
     ~ChatWindow();
     QJsonObject m_inputData;
+    void updateMessageList();
+    std::vector<Message> message_list;
+
 
 signals:
     void sendMessage(QJsonObject msg);
+
+public slots:
+    void handleMessageRecieve(Message msg);
 
 private slots:
     void updateInputData();
@@ -55,6 +63,8 @@ private slots:
 
 private:
     QLineEdit *messageLineEdit;
+    QVBoxLayout *messageListVBoxLayout;
+    QString client_username;
 };
 
 #endif // APP_WINDOWS_H
