@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['overview_0',['Overview',['../index.html',1,'']]]
+  ['application_0',['XChat: Real-time Chat Application',['../index.html',1,'']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['updatemessagelist_0',['updateMessageList',['../classChatWindow.html#abc97c29a7f7b8ba313a63cf532876969',1,'ChatWindow']]],
-  ['usage_1',['Usage',['../index.html#autotoc_md5',1,'']]]
+  ['tested_20with_0',['Requirements - build and tested with',['../index.html#autotoc_md3',1,'']]],
+  ['time_20chat_20application_1',['XChat: Real-time Chat Application',['../index.html',1,'']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['_7echatwindow_0',['~ChatWindow',['../classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19',1,'ChatWindow']]],
-  ['_7eclientconnection_1',['~ClientConnection',['../classClientConnection.html#a9e16c3f4219e801c7f4179919b5ffd54',1,'ClientConnection']]],
-  ['_7eloginwindow_2',['~LoginWindow',['../classLoginWindow.html#a0c49fe788dcce29aa50e7d974e1ad158',1,'LoginWindow']]]
+  ['with_0',['Requirements - build and tested with',['../index.html#autotoc_md3',1,'']]],
+  ['with_20docker_20currently_20unavailable_20for_20client_1',['Running with Docker - currently unavailable for client',['../index.html#autotoc_md7',1,'']]]
 ];
