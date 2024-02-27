@@ -102,13 +102,28 @@ void ChatWindow::updateMessageList()
 
     // Add the latest messages
     QLabel *curr_message;
-    for (Message msg : message_list)
+    std::vector<Message> latest_messages;
+    int messages_to_show = 10;
+    int containerHeight = messageListVBoxLayout->geometry().height();
+    if (message_list.size() > messages_to_show)
+    {
+        latest_messages = std::vector<Message>(message_list.end() - messages_to_show, message_list.end());
+    }
+    else
+    {
+        latest_messages = message_list;
+    }
+
+    for (Message msg : latest_messages)
     {
         // FIXME: Make it use correct username
         curr_message = new QLabel(msg.content + " - " + msg.sender_username);
-        curr_message->setAlignment(msg.sender_username.toStdString() == client_username.toStdString() ? Qt::AlignRight : Qt::AlignLeft);
+        curr_message->setAlignment((msg.sender_username.toStdString() == client_username.toStdString() ? Qt::AlignRight : Qt::AlignLeft) | Qt::AlignBottom);
+        // FIXME: Make resizing dynamic
+        curr_message->setFixedHeight(40);
         messageListVBoxLayout->addWidget(curr_message);
     }
+    messageListVBoxLayout->setAlignment(Qt::AlignBottom);
 }
 
 ChatWindow::~ChatWindow()
