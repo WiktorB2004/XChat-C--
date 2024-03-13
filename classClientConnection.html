@@ -130,6 +130,12 @@ Signals</h2></td></tr>
 <tr class="memitem:a6c962e9052027b23243468c05357d13e" id="r_a6c962e9052027b23243468c05357d13e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c962e9052027b23243468c05357d13e">recievedMessage</a> (<a class="el" href="classMessage.html">Message</a> msg)</td></tr>
 <tr class="memdesc:a6c962e9052027b23243468c05357d13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a message is received from the server.  <br /></td></tr>
 <tr class="separator:a6c962e9052027b23243468c05357d13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e97352b6ace9a56d19a55b96e03dbb7" id="r_a5e97352b6ace9a56d19a55b96e03dbb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e97352b6ace9a56d19a55b96e03dbb7">syncData</a> (std::vector&lt; QString &gt; client_list, std::vector&lt; QString &gt; message_list)</td></tr>
+<tr class="memdesc:a5e97352b6ace9a56d19a55b96e03dbb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted to collect other clients data after successfully connecting.  <br /></td></tr>
+<tr class="separator:a5e97352b6ace9a56d19a55b96e03dbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d235a0446f047204b93c50c475aeef" id="r_a40d235a0446f047204b93c50c475aeef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40d235a0446f047204b93c50c475aeef">addClient</a> (QString username)</td></tr>
+<tr class="memdesc:a40d235a0446f047204b93c50c475aeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a client is successfully connected to the server.  <br /></td></tr>
+<tr class="separator:a40d235a0446f047204b93c50c475aeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -231,6 +237,39 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a40d235a0446f047204b93c50c475aeef" name="a40d235a0446f047204b93c50c475aeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40d235a0446f047204b93c50c475aeef">&#9670;&#160;</a></span>addClient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientConnection::addClient </td>
+          <td>(</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>username</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted when a client is successfully connected to the server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">username</td><td>The conencted user username </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a391cc38c6e013651bb7909a804e35893" name="a391cc38c6e013651bb7909a804e35893"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a391cc38c6e013651bb7909a804e35893">&#9670;&#160;</a></span>connectionFailure</h2>
 
@@ -367,6 +406,44 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the connection to the server. </p>
+
+</div>
+</div>
+<a id="a5e97352b6ace9a56d19a55b96e03dbb7" name="a5e97352b6ace9a56d19a55b96e03dbb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e97352b6ace9a56d19a55b96e03dbb7">&#9670;&#160;</a></span>syncData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientConnection::syncData </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; QString &gt;</td>          <td class="paramname"><span class="paramname"><em>client_list</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; QString &gt;</td>          <td class="paramname"><span class="paramname"><em>message_list</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal emitted to collect other clients data after successfully connecting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client_list</td><td>The conencted users list </td></tr>
+    <tr><td class="paramname">message_list</td><td>The message list </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

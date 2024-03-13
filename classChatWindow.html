@@ -117,6 +117,9 @@ Public Slots</h2></td></tr>
 <tr class="memitem:acd6d870509a15a3b25063a012d132f0f" id="r_acd6d870509a15a3b25063a012d132f0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd6d870509a15a3b25063a012d132f0f">handleMessageRecieve</a> (<a class="el" href="classMessage.html">Message</a> msg)</td></tr>
 <tr class="memdesc:acd6d870509a15a3b25063a012d132f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot to handle received messages.  <br /></td></tr>
 <tr class="separator:acd6d870509a15a3b25063a012d132f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372d91a28d76a35e81ede64bfb413071" id="r_a372d91a28d76a35e81ede64bfb413071"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a372d91a28d76a35e81ede64bfb413071">syncServerData</a> (std::vector&lt; QString &gt; client_list, std::vector&lt; QString &gt; message_data)</td></tr>
+<tr class="memdesc:a372d91a28d76a35e81ede64bfb413071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot to sync client list of the server.  <br /></td></tr>
+<tr class="separator:a372d91a28d76a35e81ede64bfb413071"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -135,6 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abc97c29a7f7b8ba313a63cf532876969" id="r_abc97c29a7f7b8ba313a63cf532876969"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc97c29a7f7b8ba313a63cf532876969">updateMessageList</a> ()</td></tr>
 <tr class="memdesc:abc97c29a7f7b8ba313a63cf532876969"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the message list.  <br /></td></tr>
 <tr class="separator:abc97c29a7f7b8ba313a63cf532876969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a178aefdd3ebef621b838af0b73b04b" id="r_a9a178aefdd3ebef621b838af0b73b04b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a178aefdd3ebef621b838af0b73b04b">refreshClientList</a> ()</td></tr>
+<tr class="memdesc:a9a178aefdd3ebef621b838af0b73b04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the client list.  <br /></td></tr>
+<tr class="separator:a9a178aefdd3ebef621b838af0b73b04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -144,6 +150,12 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a3513cbcca4903d378fe66f474b109501" id="r_a3513cbcca4903d378fe66f474b109501"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classMessage.html">Message</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3513cbcca4903d378fe66f474b109501">message_list</a></td></tr>
 <tr class="memdesc:a3513cbcca4903d378fe66f474b109501"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of messages.  <br /></td></tr>
 <tr class="separator:a3513cbcca4903d378fe66f474b109501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837cb69cd71122e7ecd1974f0056c09d" id="r_a837cb69cd71122e7ecd1974f0056c09d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a837cb69cd71122e7ecd1974f0056c09d">m_client_list</a></td></tr>
+<tr class="memdesc:a837cb69cd71122e7ecd1974f0056c09d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of the clients.  <br /></td></tr>
+<tr class="separator:a837cb69cd71122e7ecd1974f0056c09d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad43799622fae6446d13a744d85319363" id="r_ad43799622fae6446d13a744d85319363"><td class="memItemLeft" align="right" valign="top">std::vector&lt; QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad43799622fae6446d13a744d85319363">m_message_data</a></td></tr>
+<tr class="memdesc:ad43799622fae6446d13a744d85319363"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of the messages.  <br /></td></tr>
+<tr class="separator:ad43799622fae6446d13a744d85319363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classChatWindow.html" title="The ChatWindow class.">ChatWindow</a> class. </p>
@@ -240,6 +252,25 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a9a178aefdd3ebef621b838af0b73b04b" name="a9a178aefdd3ebef621b838af0b73b04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a178aefdd3ebef621b838af0b73b04b">&#9670;&#160;</a></span>refreshClientList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChatWindow::refreshClientList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Refresh the client list. </p>
+
+</div>
+</div>
 <a id="a2f4757736c516f9aad8160588fd11aad" name="a2f4757736c516f9aad8160588fd11aad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f4757736c516f9aad8160588fd11aad">&#9670;&#160;</a></span>sendMessage</h2>
 
@@ -273,6 +304,44 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a372d91a28d76a35e81ede64bfb413071" name="a372d91a28d76a35e81ede64bfb413071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a372d91a28d76a35e81ede64bfb413071">&#9670;&#160;</a></span>syncServerData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ChatWindow::syncServerData </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; QString &gt;</td>          <td class="paramname"><span class="paramname"><em>client_list</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; QString &gt;</td>          <td class="paramname"><span class="paramname"><em>message_data</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slot to sync client list of the server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client_list</td><td>The list of the clients. </td></tr>
+    <tr><td class="paramname">message_data</td><td>The list of the messages. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abc97c29a7f7b8ba313a63cf532876969" name="abc97c29a7f7b8ba313a63cf532876969"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc97c29a7f7b8ba313a63cf532876969">&#9670;&#160;</a></span>updateMessageList()</h2>
 
@@ -293,6 +362,22 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
+<a id="a837cb69cd71122e7ecd1974f0056c09d" name="a837cb69cd71122e7ecd1974f0056c09d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837cb69cd71122e7ecd1974f0056c09d">&#9670;&#160;</a></span>m_client_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;QString&gt; ChatWindow::m_client_list</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The list of the clients. </p>
+
+</div>
+</div>
 <a id="a8f6def198861f6e23daa7fe99dc5cc88" name="a8f6def198861f6e23daa7fe99dc5cc88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f6def198861f6e23daa7fe99dc5cc88">&#9670;&#160;</a></span>m_inputData</h2>
 
@@ -306,6 +391,22 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The value of line edits inside chat window. </p>
+
+</div>
+</div>
+<a id="ad43799622fae6446d13a744d85319363" name="ad43799622fae6446d13a744d85319363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad43799622fae6446d13a744d85319363">&#9670;&#160;</a></span>m_message_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;QString&gt; ChatWindow::m_message_data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The list of the messages. </p>
 
 </div>
 </div>

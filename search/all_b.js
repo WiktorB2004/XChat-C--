@@ -5,5 +5,7 @@ var searchData=
   ['server_20authentication_2',['Server Authentication',['../index.html#autotoc_md9',1,'']]],
   ['serverthread_3',['ServerThread',['../classClientConnection.html#a99e1bc07ccbe495a79af4c532227519c',1,'ClientConnection']]],
   ['start_4',['start',['../classClientConnection.html#a850e93974ac0867e9a0060deb705eb56',1,'ClientConnection']]],
-  ['structure_5',['Directory Structure',['../index.html#autotoc_md11',1,'']]]
+  ['structure_5',['Directory Structure',['../index.html#autotoc_md11',1,'']]],
+  ['syncdata_6',['syncData',['../classClientConnection.html#a5e97352b6ace9a56d19a55b96e03dbb7',1,'ClientConnection']]],
+  ['syncserverdata_7',['syncServerData',['../classChatWindow.html#a372d91a28d76a35e81ede64bfb413071',1,'ChatWindow']]]
 ];

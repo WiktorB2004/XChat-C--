@@ -29,7 +29,17 @@ var menudata={children:[
 {text:"Data Structure Index",url:"classes.html"},
 {text:"Class Hierarchy",url:"hierarchy.html"},
 {text:"Data Fields",url:"functions.html",children:[
-{text:"All",url:"functions.html"},
+{text:"All",url:"functions.html",children:[
+{text:"a",url:"functions.html#index_a"},
+{text:"c",url:"functions.html#index_c"},
+{text:"h",url:"functions.html#index_h"},
+{text:"l",url:"functions.html#index_l"},
+{text:"m",url:"functions.html#index_m"},
+{text:"r",url:"functions.html#index_r"},
+{text:"s",url:"functions.html#index_s"},
+{text:"t",url:"functions.html#index_t"},
+{text:"u",url:"functions.html#index_u"},
+{text:"~",url:"functions.html#index__7E"}]},
 {text:"Functions",url:"functions_func.html"},
 {text:"Variables",url:"functions_vars.html"},
 {text:"Related Symbols",url:"functions_rela.html"}]}]},
