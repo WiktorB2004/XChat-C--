@@ -134,10 +134,27 @@ public:
     std::vector<Message> message_list;
 
     /**
+     * @brief The list of the clients.
+     *
+     */
+    std::vector<QString> m_client_list;
+
+    /**
+     * @brief The list of the messages.
+     */
+    std::vector<QString> m_message_data;
+
+    /**
      * @brief Refresh the message list.
      *
      */
     void updateMessageList();
+
+    /**
+     * @brief Refresh the client list.
+     *
+     */
+    void refreshClientList();
 signals:
     /**
      * @brief Signal to send a message.
@@ -154,6 +171,13 @@ public slots:
      */
     void handleMessageRecieve(Message msg);
 
+    /**
+     * @brief Slot to sync client list of the server.
+     *
+     * @param client_list The list of the clients.
+     * @param message_data The list of the messages.
+     */
+    void syncServerData(std::vector<QString> client_list, std::vector<QString> message_data);
 private slots:
     /**
      * @brief Slot to update the input data.
@@ -179,6 +203,12 @@ private:
      *
      */
     QVBoxLayout *messageListVBoxLayout;
+
+    /**
+     * @brief Layout for the client list.
+     *
+     */
+    QVBoxLayout *leftColumnLayout;
 
     /**
      * @brief The username of the client.

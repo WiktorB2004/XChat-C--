@@ -17,11 +17,7 @@ ChatWindow::ChatWindow(QString client_username, QWidget *parent)
     : client_username(client_username), QMainWindow(parent)
 {
     // Create a vertical layout for left column
-    QVBoxLayout *leftColumnLayout = new QVBoxLayout();
-    QLabel *leftColumnLabel = new QLabel("Left Column");
-    leftColumnLabel->setAlignment(Qt::AlignCenter);
-    leftColumnLabel->setStyleSheet("QLabel { background-color: rgba(0, 0, 0, 128); color: white; }"); // Set transparent background
-    leftColumnLayout->addWidget(leftColumnLabel);
+    leftColumnLayout = new QVBoxLayout();
 
     // Create a vertical layout for right column
     QVBoxLayout *rightColumnLayout = new QVBoxLayout();
@@ -81,6 +77,7 @@ void ChatWindow::handleMessageSend()
 {
     // Perform some validation
     emit sendMessage(m_inputData);
+    messageLineEdit->setText("");
     updateMessageList();
 }
 
@@ -88,6 +85,7 @@ void ChatWindow::handleMessageRecieve(Message msg)
 {
     message_list.push_back(msg);
     updateMessageList();
+    refreshClientList();
 }
 
 void ChatWindow::updateMessageList()
@@ -124,6 +122,52 @@ void ChatWindow::updateMessageList()
         messageListVBoxLayout->addWidget(curr_message);
     }
     messageListVBoxLayout->setAlignment(Qt::AlignBottom);
+}
+
+void ChatWindow::syncServerData(std::vector<QString> client_list, std::vector<QString> message_data)
+{
+    m_client_list = client_list;
+    m_message_data = message_data;
+    refreshClientList();
+    updateMessageList();
+}
+
+void ChatWindow::refreshClientList()
+{
+    // Clear the existing messages
+    QLayoutItem *child;
+    while ((child = leftColumnLayout->takeAt(0)) != nullptr)
+    {
+        delete child->widget();
+        delete child;
+    }
+
+    // Add the latest messages
+    QLabel *client;
+    std::vector<QString> top_clients;
+    int clients_to_show = 10;
+    int containerHeight = leftColumnLayout->geometry().height();
+    if (m_client_list.size() > clients_to_show)
+    {
+        top_clients = std::vector<QString>(m_client_list.end() - clients_to_show, m_client_list.end());
+    }
+    else
+    {
+        top_clients = m_client_list;
+    }
+
+    for (QString username : top_clients)
+    {
+        if (username != client_username)
+        {
+            client = new QLabel(username);
+            client->setAlignment(Qt::AlignCenter);
+            // FIXME: Make resizing dynamic
+            client->setFixedHeight(40);
+            leftColumnLayout->addWidget(client);
+        }
+    }
+    leftColumnLayout->setAlignment(Qt::AlignTop);
 }
 
 ChatWindow::~ChatWindow()

@@ -1,6 +1,7 @@
 #include <QtCore/QDebug>
 #include <QtWebSockets>
 #include <QtCore>
+#include <algorithm>
 #include "../include/chat_connection.h"
 
 using namespace std;
@@ -23,13 +24,27 @@ void ClientConnection::start()
 
 void ClientConnection::onConnected()
 {
-    qDebug() << "Connected to server";
+    if (client_username.isEmpty())
+    {
+        qDebug() << "User passed empty username";
+        emit connectionFailure();
+        return;
+    }
+    QJsonObject msg;
+    msg["sender"] = client_username;
+    msg["content"] = "New connection";
+    msg["type"] = "message";
+    QJsonDocument doc(msg);
+    QByteArray data = doc.toJson();
+    m_client.sendTextMessage(data);
     emit connectionSuccess();
+    qDebug() << "Connected to server";
 }
 
 void ClientConnection::sendMessage(QJsonObject msg)
 {
     msg["sender"] = client_username;
+    msg["type"] = "message";
     QJsonDocument doc(msg);
     QByteArray data = doc.toJson();
     m_client.sendTextMessage(data);
@@ -47,7 +62,6 @@ ClientConnection::~ClientConnection()
 
 void ClientConnection::onTextMessageReceived(const QString &message)
 {
-    qDebug() << "Received message from server:" << message;
     QJsonObject msg_json;
     QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
 
@@ -67,6 +81,34 @@ void ClientConnection::onTextMessageReceived(const QString &message)
         qDebug() << "Invalid JSON: " << message;
     }
 
-    Message msg(msg_json.value("sender").toString(), msg_json.value("content").toString());
-    emit recievedMessage(msg);
+    if (msg_json.value("type").toString() == "data")
+    {
+        // Get the "content" object from msg_json
+        QJsonObject content = msg_json.value("content").toObject();
+        // Get the "users" array from the "content" object
+        QJsonArray users_array = content.value("users").toArray();
+        // Convert the QJsonArray to a std::vector<QString>
+        std::vector<QString> client_list;
+        for (const auto &user : users_array)
+        {
+            client_list.push_back(user.toString());
+        }
+        // Get the "messages" array from the "content" object
+        QJsonArray messages_array = content.value("messages").toArray();
+        // Convert the QJsonArray to a std::vector<QString>
+        std::vector<QString> message_list;
+        for (const auto &message : messages_array)
+        {
+            message_list.push_back(message.toString());
+        }
+        m_client_list = client_list;
+        qDebug() << "Received data from server:" << message;
+        emit syncData(client_list, message_list);
+    }
+    else
+    {
+        Message msg(msg_json.value("sender").toString(), msg_json.value("content").toString(), "message");
+        qDebug() << "Received message from server:" << message;
+        emit recievedMessage(msg);
+    }
 }

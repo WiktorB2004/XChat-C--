@@ -50,6 +50,7 @@ int main(int argc, char *argv[])
     QThread serverThread;
     // Start the connection related thread and window
     QObject::connect(&serverThread, &QThread::started, &client, &ClientConnection::start);
+    QObject::connect(&client, &ClientConnection::syncData, &chatWindow, &ChatWindow::syncServerData);
     QObject::connect(&client, &ClientConnection::connectionSuccess, &chatWindow, &ChatWindow::show);
     // Handle connection errors
     QObject::connect(&client, &ClientConnection::connectionFailure, &app, &QApplication::quit);

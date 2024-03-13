@@ -102,10 +102,9 @@ void LoginWindow::updateInputData()
 void LoginWindow::loginSubmit()
 {
     // Implement server-side authentication
-    QString username = "wiktor";
     QString password = "1";
     // FIXME: Implement real authentication
-    if (/*m_inputData.object().value("username").toString() == username  &&*/ m_inputData.object().value("password").toString() == password)
+    if (/*m_inputData.object().value("username").toString() == username  &&*/ !m_inputData.object().value("username").toString().isEmpty() && m_inputData.object().value("password").toString() == password)
     {
         qDebug() << "User passed correct credentials";
         emit loginSuccess();

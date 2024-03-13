@@ -38,8 +38,10 @@ protected:
     QUrl m_url;          /**< The URL of the server. */
 
     friend class ServerThread;
+
 private:
-    QString client_username; /**< The username of the client. */
+    QString client_username;            /**< The username of the client. */
+    std::vector<QString> m_client_list; /**< The list of connected client usernames. */
 
 signals:
     /**
@@ -58,6 +60,21 @@ signals:
      * @param msg The received message.
      */
     void recievedMessage(Message msg);
+
+    /**
+     * @brief Signal emitted to collect other clients data after successfully connecting.
+     *
+     * @param client_list The conencted users list
+     * @param message_list The message list
+     */
+    void syncData(std::vector<QString> client_list, std::vector<QString> message_list);
+
+    /**
+     * @brief Signal emitted when a client is successfully connected to the server.
+     *
+     * @param username The conencted user username
+     */
+    void addClient(QString username);
 
 public slots:
     /**

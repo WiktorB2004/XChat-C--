@@ -6,12 +6,13 @@
 class Message
 {
 public:
-    Message(QString sender_username, QString content)
-        : sender_username(sender_username), content(content)
+    Message(QString sender_username, QString content, QString type)
+        : sender_username(sender_username), content(content), type(type)
     {
     }
 
     QString sender_username;
+    QString type;
     QString content;
 };
 

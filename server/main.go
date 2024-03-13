@@ -8,13 +8,20 @@ import (
 )
 
 var clients = make(map[*websocket.Conn]bool) // Connected clients
+var clients_ip = make(map[string]string)     // Connected clients - ip -> username
 var broadcast = make(chan Message)           // Broadcast channel
 
 // Define our message object
 type Message struct {
-	Sender    string `json:"sender,omitempty"`
-	Recipient string `json:"recipient,omitempty"`
-	Content   string `json:"content,omitempty"`
+	Sender    string      `json:"sender,omitempty"`
+	Type      string      `json:"type"`
+	Recipient string      `json:"recipient,omitempty"`
+	Content   interface{} `json:"content,omitempty"`
+}
+
+type Data struct {
+	Users    []string  `json:"users"`
+	Messages []Message `json:"messages"`
 }
 
 var upgrader = websocket.Upgrader{
@@ -22,6 +29,18 @@ var upgrader = websocket.Upgrader{
 		return true
 	},
 }
+
+// TO MOVE OUT
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
+
+// TO MOVE OUT
 
 func main() {
 	// Configure websocket route
@@ -36,6 +55,11 @@ func main() {
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
+}
+
+var userData = Data{
+	Users:    []string{},
+	Messages: []Message{},
 }
 
 func handleConnections(w http.ResponseWriter, r *http.Request) {
@@ -55,6 +79,14 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	// Log the new connection
 	log.Println("New connection established:", ip)
 
+	// Send initial data to the client
+	initialData := Message{
+		Type:      "data",
+		Sender:    "server",
+		Recipient: ip,
+		Content:   userData,
+	}
+
 	for {
 		var msg Message
 		// Read in a new message as JSON and map it to a Message object
@@ -64,7 +96,17 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			delete(clients, ws)
 			break
 		}
-		// Send the newly received message to the broadcast channel
+
+		if !contains(userData.Users, msg.Sender) {
+			clients_ip[ip] = msg.Sender
+			userData.Users = append(userData.Users, msg.Sender)
+			initialData.Content = userData
+		}
+
+		userData.Messages = append(userData.Messages, msg)
+		initialData.Content = userData
+
+		broadcast <- initialData
 		broadcast <- msg
 	}
 }
