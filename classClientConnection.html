@@ -127,12 +127,12 @@ Signals</h2></td></tr>
 <tr class="memitem:a391cc38c6e013651bb7909a804e35893" id="r_a391cc38c6e013651bb7909a804e35893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a391cc38c6e013651bb7909a804e35893">connectionFailure</a> ()</td></tr>
 <tr class="memdesc:a391cc38c6e013651bb7909a804e35893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when the connection to the server fails.  <br /></td></tr>
 <tr class="separator:a391cc38c6e013651bb7909a804e35893"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c962e9052027b23243468c05357d13e" id="r_a6c962e9052027b23243468c05357d13e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c962e9052027b23243468c05357d13e">recievedMessage</a> (<a class="el" href="classMessage.html">Message</a> msg)</td></tr>
-<tr class="memdesc:a6c962e9052027b23243468c05357d13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a message is received from the server.  <br /></td></tr>
-<tr class="separator:a6c962e9052027b23243468c05357d13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e97352b6ace9a56d19a55b96e03dbb7" id="r_a5e97352b6ace9a56d19a55b96e03dbb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e97352b6ace9a56d19a55b96e03dbb7">syncData</a> (std::vector&lt; QString &gt; client_list, std::vector&lt; QString &gt; message_list)</td></tr>
-<tr class="memdesc:a5e97352b6ace9a56d19a55b96e03dbb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted to collect other clients data after successfully connecting.  <br /></td></tr>
-<tr class="separator:a5e97352b6ace9a56d19a55b96e03dbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3afa96a0ab8d15fd0c20705dca25fd" id="r_acb3afa96a0ab8d15fd0c20705dca25fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb3afa96a0ab8d15fd0c20705dca25fd">recievedMessage</a> ()</td></tr>
+<tr class="memdesc:acb3afa96a0ab8d15fd0c20705dca25fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a message is received from the server.  <br /></td></tr>
+<tr class="separator:acb3afa96a0ab8d15fd0c20705dca25fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5840d934be0b3d27306562e0df730e0d" id="r_a5840d934be0b3d27306562e0df730e0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5840d934be0b3d27306562e0df730e0d">syncData</a> (std::vector&lt; QString &gt; client_list, std::vector&lt; <a class="el" href="classMessage.html">Message</a> &gt; message_list)</td></tr>
+<tr class="memdesc:a5840d934be0b3d27306562e0df730e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted to collect other clients data after successfully connecting.  <br /></td></tr>
+<tr class="separator:a5840d934be0b3d27306562e0df730e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d235a0446f047204b93c50c475aeef" id="r_a40d235a0446f047204b93c50c475aeef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40d235a0446f047204b93c50c475aeef">addClient</a> (QString username)</td></tr>
 <tr class="memdesc:a40d235a0446f047204b93c50c475aeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal emitted when a client is successfully connected to the server.  <br /></td></tr>
 <tr class="separator:a40d235a0446f047204b93c50c475aeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,8 +324,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c962e9052027b23243468c05357d13e" name="a6c962e9052027b23243468c05357d13e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c962e9052027b23243468c05357d13e">&#9670;&#160;</a></span>recievedMessage</h2>
+<a id="acb3afa96a0ab8d15fd0c20705dca25fd" name="acb3afa96a0ab8d15fd0c20705dca25fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb3afa96a0ab8d15fd0c20705dca25fd">&#9670;&#160;</a></span>recievedMessage</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -336,7 +336,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void ClientConnection::recievedMessage </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classMessage.html">Message</a></td>          <td class="paramname"><span class="paramname"><em>msg</em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -348,12 +348,6 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Signal emitted when a message is received from the server. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">msg</td><td>The received message. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -409,8 +403,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a5e97352b6ace9a56d19a55b96e03dbb7" name="a5e97352b6ace9a56d19a55b96e03dbb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e97352b6ace9a56d19a55b96e03dbb7">&#9670;&#160;</a></span>syncData</h2>
+<a id="a5840d934be0b3d27306562e0df730e0d" name="a5840d934be0b3d27306562e0df730e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5840d934be0b3d27306562e0df730e0d">&#9670;&#160;</a></span>syncData</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -426,7 +420,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; QString &gt;</td>          <td class="paramname"><span class="paramname"><em>message_list</em></span>&#160;)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classMessage.html">Message</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>message_list</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
