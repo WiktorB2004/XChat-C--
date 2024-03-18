@@ -57,9 +57,8 @@ signals:
     /**
      * @brief Signal emitted when a message is received from the server.
      *
-     * @param msg The received message.
      */
-    void recievedMessage(Message msg);
+    void recievedMessage();
 
     /**
      * @brief Signal emitted to collect other clients data after successfully connecting.
@@ -67,7 +66,7 @@ signals:
      * @param client_list The conencted users list
      * @param message_list The message list
      */
-    void syncData(std::vector<QString> client_list, std::vector<QString> message_list);
+    void syncData(std::vector<QString> client_list, std::vector<Message> message_list);
 
     /**
      * @brief Signal emitted when a client is successfully connected to the server.

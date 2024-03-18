@@ -167,9 +167,8 @@ public slots:
     /**
      * @brief Slot to handle received messages.
      *
-     * @param msg The received message.
      */
-    void handleMessageRecieve(Message msg);
+    void handleMessageRecieve();
 
     /**
      * @brief Slot to sync client list of the server.
@@ -177,7 +176,7 @@ public slots:
      * @param client_list The list of the clients.
      * @param message_data The list of the messages.
      */
-    void syncServerData(std::vector<QString> client_list, std::vector<QString> message_data);
+    void syncServerData(std::vector<QString> client_list, std::vector<Message> message_data);
 private slots:
     /**
      * @brief Slot to update the input data.

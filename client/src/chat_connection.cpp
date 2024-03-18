@@ -96,10 +96,14 @@ void ClientConnection::onTextMessageReceived(const QString &message)
         // Get the "messages" array from the "content" object
         QJsonArray messages_array = content.value("messages").toArray();
         // Convert the QJsonArray to a std::vector<QString>
-        std::vector<QString> message_list;
+        std::vector<Message> message_list;
         for (const auto &message : messages_array)
         {
-            message_list.push_back(message.toString());
+            QJsonObject msgObj = message.toObject();
+            QString sender_username = msgObj.value("sender").toString();
+            QString message_content = msgObj.value("content").toString();
+            Message msg(sender_username, message_content, "message");
+            message_list.push_back(msg);
         }
         m_client_list = client_list;
         qDebug() << "Received data from server:" << message;
@@ -109,6 +113,6 @@ void ClientConnection::onTextMessageReceived(const QString &message)
     {
         Message msg(msg_json.value("sender").toString(), msg_json.value("content").toString(), "message");
         qDebug() << "Received message from server:" << message;
-        emit recievedMessage(msg);
+        emit recievedMessage();
     }
 }

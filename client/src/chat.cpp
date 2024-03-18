@@ -81,9 +81,8 @@ void ChatWindow::handleMessageSend()
     updateMessageList();
 }
 
-void ChatWindow::handleMessageRecieve(Message msg)
+void ChatWindow::handleMessageRecieve()
 {
-    message_list.push_back(msg);
     updateMessageList();
     refreshClientList();
 }
@@ -124,10 +123,13 @@ void ChatWindow::updateMessageList()
     messageListVBoxLayout->setAlignment(Qt::AlignBottom);
 }
 
-void ChatWindow::syncServerData(std::vector<QString> client_list, std::vector<QString> message_data)
+void ChatWindow::syncServerData(std::vector<QString> client_list, std::vector<Message> message_data)
 {
     m_client_list = client_list;
-    m_message_data = message_data;
+    message_list = message_data;
+
+    qDebug() << "Loaded messages from the server";
+
     refreshClientList();
     updateMessageList();
 }
