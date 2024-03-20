@@ -174,32 +174,37 @@ $(function(){initNavTree('app__windows_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>signals:</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classChatWindow.html#a2f4757736c516f9aad8160588fd11aad">  164</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classChatWindow.html#a2f4757736c516f9aad8160588fd11aad">sendMessage</a>(QJsonObject msg);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classChatWindow.html#a33ba8e2f14244bbcdbb46e601206d519">handleMessageRecieve</a>();</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classChatWindow.html#a4058f43854710a3f9768e55f1734438f">  171</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="classChatWindow.html#a4058f43854710a3f9768e55f1734438f">chatSwitchSync</a>(QString name);</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classChatWindow.html#ad82a67a1809159c4e98d50125798ed18">syncServerData</a>(std::vector&lt;QString&gt; client_list, std::vector&lt;Message&gt; message_data);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="keywordtype">void</span> updateInputData();</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordtype">void</span> handleMessageSend();</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    QLineEdit *messageLineEdit;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classChatWindow.html#a33ba8e2f14244bbcdbb46e601206d519">handleMessageRecieve</a>();</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="classChatWindow.html#ad82a67a1809159c4e98d50125798ed18">syncServerData</a>(std::vector&lt;QString&gt; client_list, std::vector&lt;Message&gt; message_data);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">void</span> updateInputData();</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">void</span> handleMessageSend();</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    QVBoxLayout *messageListVBoxLayout;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    QVBoxLayout *leftColumnLayout;</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    QString client_username;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>};</div>
-</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordtype">void</span> switchChat(QString username);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    QLineEdit *messageLineEdit;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    QVBoxLayout *messageListVBoxLayout;</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#endif </span><span class="comment">// APP_WINDOWS_H</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    QVBoxLayout *leftColumnLayout;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    QString client_username;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>};</div>
+</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif </span><span class="comment">// APP_WINDOWS_H</span></div>
 <div class="ttc" id="aclassChatWindow_html"><div class="ttname"><a href="classChatWindow.html">ChatWindow</a></div><div class="ttdoc">The ChatWindow class.</div><div class="ttdef"><b>Definition</b> app_windows.h:107</div></div>
-<div class="ttc" id="aclassChatWindow_html_a100c64a78603b3c65026acfd0b64ad19"><div class="ttname"><a href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">ChatWindow::~ChatWindow</a></div><div class="ttdeci">~ChatWindow()</div><div class="ttdoc">Destroy the Chat Window object.</div><div class="ttdef"><b>Definition</b> chat.cpp:175</div></div>
+<div class="ttc" id="aclassChatWindow_html_a100c64a78603b3c65026acfd0b64ad19"><div class="ttname"><a href="classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19">ChatWindow::~ChatWindow</a></div><div class="ttdeci">~ChatWindow()</div><div class="ttdoc">Destroy the Chat Window object.</div><div class="ttdef"><b>Definition</b> chat.cpp:183</div></div>
 <div class="ttc" id="aclassChatWindow_html_a2f4757736c516f9aad8160588fd11aad"><div class="ttname"><a href="classChatWindow.html#a2f4757736c516f9aad8160588fd11aad">ChatWindow::sendMessage</a></div><div class="ttdeci">void sendMessage(QJsonObject msg)</div><div class="ttdoc">Signal to send a message.</div></div>
 <div class="ttc" id="aclassChatWindow_html_a33ba8e2f14244bbcdbb46e601206d519"><div class="ttname"><a href="classChatWindow.html#a33ba8e2f14244bbcdbb46e601206d519">ChatWindow::handleMessageRecieve</a></div><div class="ttdeci">void handleMessageRecieve()</div><div class="ttdoc">Slot to handle received messages.</div><div class="ttdef"><b>Definition</b> chat.cpp:84</div></div>
 <div class="ttc" id="aclassChatWindow_html_a3513cbcca4903d378fe66f474b109501"><div class="ttname"><a href="classChatWindow.html#a3513cbcca4903d378fe66f474b109501">ChatWindow::message_list</a></div><div class="ttdeci">std::vector&lt; Message &gt; message_list</div><div class="ttdoc">The list of messages.</div><div class="ttdef"><b>Definition</b> app_windows.h:134</div></div>
+<div class="ttc" id="aclassChatWindow_html_a4058f43854710a3f9768e55f1734438f"><div class="ttname"><a href="classChatWindow.html#a4058f43854710a3f9768e55f1734438f">ChatWindow::chatSwitchSync</a></div><div class="ttdeci">void chatSwitchSync(QString name)</div><div class="ttdoc">Signal to sync the chat switch.</div></div>
 <div class="ttc" id="aclassChatWindow_html_a52806658e0156c5c00d85e2b19153dfa"><div class="ttname"><a href="classChatWindow.html#a52806658e0156c5c00d85e2b19153dfa">ChatWindow::ChatWindow</a></div><div class="ttdeci">ChatWindow(QString client_username, QWidget *parent=nullptr)</div><div class="ttdoc">Construct a new Chat Window object.</div><div class="ttdef"><b>Definition</b> chat.cpp:16</div></div>
 <div class="ttc" id="aclassChatWindow_html_a837cb69cd71122e7ecd1974f0056c09d"><div class="ttname"><a href="classChatWindow.html#a837cb69cd71122e7ecd1974f0056c09d">ChatWindow::m_client_list</a></div><div class="ttdeci">std::vector&lt; QString &gt; m_client_list</div><div class="ttdoc">The list of the clients.</div><div class="ttdef"><b>Definition</b> app_windows.h:140</div></div>
 <div class="ttc" id="aclassChatWindow_html_a8f6def198861f6e23daa7fe99dc5cc88"><div class="ttname"><a href="classChatWindow.html#a8f6def198861f6e23daa7fe99dc5cc88">ChatWindow::m_inputData</a></div><div class="ttdeci">QJsonObject m_inputData</div><div class="ttdoc">The value of line edits inside chat window.</div><div class="ttdef"><b>Definition</b> app_windows.h:128</div></div>

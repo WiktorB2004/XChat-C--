@@ -2,6 +2,7 @@ var classChatWindow =
 [
     [ "ChatWindow", "classChatWindow.html#a52806658e0156c5c00d85e2b19153dfa", null ],
     [ "~ChatWindow", "classChatWindow.html#a100c64a78603b3c65026acfd0b64ad19", null ],
+    [ "chatSwitchSync", "classChatWindow.html#a4058f43854710a3f9768e55f1734438f", null ],
     [ "handleMessageRecieve", "classChatWindow.html#a33ba8e2f14244bbcdbb46e601206d519", null ],
     [ "refreshClientList", "classChatWindow.html#a9a178aefdd3ebef621b838af0b73b04b", null ],
     [ "sendMessage", "classChatWindow.html#a2f4757736c516f9aad8160588fd11aad", null ],
