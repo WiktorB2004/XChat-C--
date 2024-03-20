@@ -60,9 +60,12 @@ int main(int argc, char *argv[])
 
     // Handle message sending
     QObject::connect(&chatWindow, &ChatWindow::sendMessage, &client, &ClientConnection::sendMessage);
-    QObject::connect(&chatWindow, &ChatWindow::close, &serverThread, &QThread::quit);
     // Handle message recieving
     QObject::connect(&client, &ClientConnection::recievedMessage, &chatWindow, &ChatWindow::handleMessageRecieve);
+    // Handle chat switch
+    QObject::connect(&chatWindow, &ChatWindow::chatSwitchSync, &client, &ClientConnection::handleChatSwitch);
+    // Quit the thread after window close
+    QObject::connect(&chatWindow, &ChatWindow::close, &serverThread, &QThread::quit);
     serverThread.start();
 
     serverThread.quit();

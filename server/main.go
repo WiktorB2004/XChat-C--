@@ -29,24 +29,15 @@ var upgrader = websocket.Upgrader{
 	},
 }
 
-// FIXME: Correct error handling
 func main() {
 	// Load environmental variables
 	requiredEnvVars := []string{"MONGODB_URL", "MONGODB_DB"}
 	utils.LoadEnvVarialbes(requiredEnvVars)
 	// Init mongodb connection
 	app.InitMongoDB()
-	client := app.GetMongoClient()
-	chat_collection := client.Database(app.MongoDB).Collection("chats")
 
 	// Load global chat - default behavior
-	filter := bson.M{"name": activeChat.Name}
-
-	// Load global chat
-	mongoErr := chat_collection.FindOne(context.Background(), filter).Decode(&activeChat)
-	if mongoErr != mongo.ErrNoDocuments && mongoErr != nil {
-		log.Fatal("Mongo err - preload active chat: ", mongoErr)
-	}
+	utils.LoadChat("global", &activeChat)
 
 	// Configure websocket route
 	http.HandleFunc("/ws", handleConnections)
@@ -101,13 +92,27 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 
+		// Hanlde chat switch
+		if msg.Type == "switch" {
+			content, ok := msg.Content.(string)
+			if !ok {
+				log.Print("Err - switching the chat")
+			} else {
+				utils.LoadChat(content, &activeChat)
+			}
+		}
+
+		// ------------------
+
 		user_found := utils.UserFind(msg.Sender, activeChat.ChatData.Users)
 
 		if user_found == nil {
 			var usr models.User
 			usr.Username = msg.Sender
 			usr.Password = "TEST"
-			usr.Messages = append(usr.Messages, msg)
+			if msg.Type != "switch" {
+				usr.Messages = append(usr.Messages, msg)
+			}
 			clients_ip[ip] = msg.Sender
 			activeChat.ChatData.Users = append(activeChat.ChatData.Users, usr)
 			initialData.Content = activeChat.ChatData
@@ -117,6 +122,9 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			mongoErr := chat_collection.FindOneAndUpdate(context.Background(), filter, update)
 			if mongoErr != nil && mongoErr.Err() != nil {
 				if mongoErr.Err() == mongo.ErrNoDocuments {
+					var usr models.User
+					usr.Username = "global"
+					activeChat.ChatData.Users = append(activeChat.ChatData.Users, usr)
 					_, mongoErr2 := chat_collection.InsertOne(context.Background(), activeChat)
 					if mongoErr2 != nil {
 						log.Printf("Mongo err - insert user message: %v", mongoErr2)
@@ -127,10 +135,11 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			}
 			user_found = &usr
 		}
+		if msg.Type != "switch" {
+			activeChat.ChatData.Messages = append(activeChat.ChatData.Messages, msg)
+			user_found.Messages = append(user_found.Messages, msg)
+		}
 
-		activeChat.ChatData.Messages = append(activeChat.ChatData.Messages, msg)
-
-		user_found.Messages = append(user_found.Messages, msg)
 		filter := bson.M{"name": activeChat.Name}
 		update := bson.M{"$set": bson.M{"chatData": activeChat.ChatData}}
 		mongoErr := chat_collection.FindOneAndUpdate(context.Background(), filter, update)

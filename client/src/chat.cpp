@@ -145,7 +145,7 @@ void ChatWindow::refreshClientList()
     }
 
     // Add the latest messages
-    QLabel *client;
+
     std::vector<QString> top_clients;
     int clients_to_show = 10;
     int containerHeight = leftColumnLayout->geometry().height();
@@ -158,18 +158,26 @@ void ChatWindow::refreshClientList()
         top_clients = m_client_list;
     }
 
-    for (QString username : top_clients)
+    QPushButton *client;
+    for (QString name : top_clients)
     {
-        if (username != client_username)
+        if (name != client_username)
         {
-            client = new QLabel(username);
-            client->setAlignment(Qt::AlignCenter);
-            // FIXME: Make resizing dynamic
-            client->setFixedHeight(40);
+            client = new QPushButton(name);
+            client->setStyleSheet("text-align: center;");
+            client->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
             leftColumnLayout->addWidget(client);
+            QObject::connect(client, &QPushButton::clicked, this, [=]() { //
+                switchChat(client->text());
+            });
         }
     }
     leftColumnLayout->setAlignment(Qt::AlignTop);
+}
+
+void ChatWindow::switchChat(QString name)
+{
+    emit chatSwitchSync(name);
 }
 
 ChatWindow::~ChatWindow()

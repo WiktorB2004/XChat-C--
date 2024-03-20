@@ -91,7 +91,7 @@ void ClientConnection::onTextMessageReceived(const QString &message)
         std::vector<QString> client_list;
         for (const auto &user : users_array)
         {
-            client_list.push_back(user.toString());
+            client_list.push_back(user.toObject().value("username").toString());
         }
         // Get the "messages" array from the "content" object
         QJsonArray messages_array = content.value("messages").toArray();
@@ -109,10 +109,21 @@ void ClientConnection::onTextMessageReceived(const QString &message)
         qDebug() << "Received data from server:" << message;
         emit syncData(client_list, message_list);
     }
-    else
+    else if (msg_json.value("type").toString() != "switch")
     {
-        Message msg(msg_json.value("sender").toString(), msg_json.value("content").toString(), "message");
+        // Message msg(msg_json.value("sender").toString(), msg_json.value("content").toString(), "message");
         qDebug() << "Received message from server:" << message;
         emit recievedMessage();
     }
+}
+
+void ClientConnection::handleChatSwitch(QString name)
+{
+    QJsonObject msg;
+    msg["sender"] = client_username;
+    msg["content"] = name;
+    msg["type"] = "switch";
+    QJsonDocument doc(msg);
+    QByteArray data = doc.toJson();
+    m_client.sendTextMessage(data);
 }

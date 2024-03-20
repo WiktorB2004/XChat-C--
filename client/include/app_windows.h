@@ -163,6 +163,13 @@ signals:
      */
     void sendMessage(QJsonObject msg);
 
+    /**
+     * @brief Signal to sync the chat switch.
+     *
+     * @param name The name of the chat
+     */
+    void chatSwitchSync(QString name);
+
 public slots:
     /**
      * @brief Slot to handle received messages.
@@ -189,6 +196,13 @@ private slots:
      *
      */
     void handleMessageSend();
+
+    /**
+     * @brief Slot to swtich the chat
+     *
+     * @param usernamename The name of the chat
+     */
+    void switchChat(QString username);
 
 private:
     /**

@@ -83,6 +83,13 @@ public slots:
      */
     void sendMessage(QJsonObject msg);
 
+    /**
+     * @brief Slot to handle chat switch.
+     *
+     * @param name The name of chat to switch.
+     */
+    void handleChatSwitch(QString name);
+
 private slots:
     /**
      * @brief Slot called when the connection to the server is established.
