@@ -4,36 +4,23 @@ import (
 	"context"
 	"log"
 	"net/http"
-	"os"
 	"server/app"
+	"server/models"
+	"server/utils"
 
 	"github.com/gorilla/websocket"
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
 )
 
 var clients = make(map[*websocket.Conn]bool) // Connected clients
 var clients_ip = make(map[string]string)     // Connected clients - ip -> username
-var broadcast = make(chan Message)           // Broadcast channel
+var broadcast = make(chan models.Message)    // Broadcast channel
 
-// Define our message object
-type Message struct {
-	ID        string      `json:"id,omitempty" bson:"_id,omitempty"`
-	Sender    string      `json:"sender,omitempty" bson:"sender,omitempty"`
-	Type      string      `json:"type" bson:"type"`
-	Recipient string      `json:"recipient,omitempty" bson:"recipient,omitempty"`
-	Content   interface{} `json:"content,omitempty" bson:"content,omitempty"`
-}
-
-type Data struct {
-	Users    []string  `json:"users"`
-	Messages []Message `json:"messages"`
-}
-
-type User struct {
-	Username string    `json:"username" bson:"username"`
-	Password string    `json:"password" bson:"password"`
-	Messages []Message `json:"Messages" bson:"Messages"`
+var activeChat = models.Chat{
+	Name:     "global",
+	ChatData: models.Data{},
+	IsGroup:  false,
 }
 
 var upgrader = websocket.Upgrader{
@@ -42,71 +29,24 @@ var upgrader = websocket.Upgrader{
 	},
 }
 
-// TO MOVE OUT
-func contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-	return false
-}
-
-// TO MOVE OUT
-
-var userData = Data{
-	Users:    []string{},
-	Messages: []Message{},
-}
-
+// FIXME: Correct error handling
 func main() {
-	// LOAD .env variables
-	if err := godotenv.Load(".env"); err != nil {
-		log.Println("Warning: .env file not found or unable to load.")
-	}
-
-	// Check if required environment variables are set
+	// Load environmental variables
 	requiredEnvVars := []string{"MONGODB_URL", "MONGODB_DB"}
-	for _, envVar := range requiredEnvVars {
-		if _, exists := os.LookupEnv(envVar); !exists {
-			log.Fatalf("Error: Required environment variable %s is not set.", envVar)
-		}
-	}
-	//
-
+	utils.LoadEnvVarialbes(requiredEnvVars)
 	// Init mongodb connection
 	app.InitMongoDB()
 	client := app.GetMongoClient()
-	message_collection := client.Database(app.MongoDB).Collection("messages")
+	chat_collection := client.Database(app.MongoDB).Collection("chats")
 
-	// FIXME: Correct error handling
-	// Define an empty filter to match all documents
-	filter := bson.M{}
+	// Load global chat - default behavior
+	filter := bson.M{"name": activeChat.Name}
 
-	// Find all documents in the collection
-	cursor, err := message_collection.Find(context.Background(), filter)
-	if err != nil {
-		log.Fatal("Err: ", err)
+	// Load global chat
+	mongoErr := chat_collection.FindOne(context.Background(), filter).Decode(&activeChat)
+	if mongoErr != mongo.ErrNoDocuments && mongoErr != nil {
+		log.Fatal("Mongo err - preload active chat: ", mongoErr)
 	}
-
-	// Iterate over the cursor and decode each document into a User struct
-	for cursor.Next(context.Background()) {
-		var msg Message
-		cursor.Decode(&msg)
-
-		// Append the decoded document to the slice
-		userData.Messages = append(userData.Messages, msg)
-	}
-
-	// Check for any cursor errors after the loop
-	if err = cursor.Err(); err != nil {
-		log.Fatal("Err: ", err)
-	}
-
-	// Close the cursor once done
-	cursor.Close(context.Background())
-
-	// MONGODB Connection - Handle the errors properly
 
 	// Configure websocket route
 	http.HandleFunc("/ws", handleConnections)
@@ -116,7 +56,7 @@ func main() {
 
 	// Start the server on localhost port 8000 and log any errors
 	log.Println("Server started on :8000")
-	err = http.ListenAndServe(":8000", nil)
+	err := http.ListenAndServe(":8000", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
@@ -140,71 +80,72 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 	log.Println("New connection established:", ip)
 
 	// Send initial data to the client
-	initialData := Message{
+	initialData := models.Message{
 		Type:      "data",
 		Sender:    "server",
 		Recipient: ip,
-		Content:   userData,
+		Content:   activeChat.ChatData,
 	}
 
-	// Get the MongoDB client
 	client := app.GetMongoClient()
-
-	// Access the "messages" collection in the specified database
-	message_collection := client.Database(app.MongoDB).Collection("messages")
-	user_collection := client.Database(app.MongoDB).Collection("users")
-	//
+	chat_collection := client.Database(app.MongoDB).Collection("chats")
 
 	for {
-		var msg Message
-		var usr User
+		var msg models.Message
+
 		// Read in a new message as JSON and map it to a Message object
 		err := ws.ReadJSON(&msg)
 		if err != nil {
-			log.Printf("error: %v", err)
+			log.Printf("Message read: %v", err)
 			delete(clients, ws)
 			break
 		}
 
-		filter := bson.M{"username": msg.Sender}
-		user_found := user_collection.FindOne(context.Background(), filter).Decode(&usr)
-		if user_found != nil {
+		user_found := utils.UserFind(msg.Sender, activeChat.ChatData.Users)
+
+		if user_found == nil {
+			var usr models.User
 			usr.Username = msg.Sender
 			usr.Password = "TEST"
-		}
-		usr.Messages = append(usr.Messages, msg)
-		if !contains(userData.Users, msg.Sender) {
+			usr.Messages = append(usr.Messages, msg)
 			clients_ip[ip] = msg.Sender
-			userData.Users = append(userData.Users, msg.Sender)
-			initialData.Content = userData
-			if user_found != nil {
-				_, err = user_collection.InsertOne(context.Background(), usr)
+			activeChat.ChatData.Users = append(activeChat.ChatData.Users, usr)
+			initialData.Content = activeChat.ChatData
+
+			filter := bson.M{"name": activeChat.Name}
+			update := bson.M{"$set": bson.M{"chatData": activeChat.ChatData}}
+			mongoErr := chat_collection.FindOneAndUpdate(context.Background(), filter, update)
+			if mongoErr != nil && mongoErr.Err() != nil {
+				if mongoErr.Err() == mongo.ErrNoDocuments {
+					_, mongoErr2 := chat_collection.InsertOne(context.Background(), activeChat)
+					if mongoErr2 != nil {
+						log.Printf("Mongo err - insert user message: %v", mongoErr2)
+					}
+				} else {
+					log.Printf("Mongo err - new user push to active chat: %v", mongoErr.Err())
+				}
+			}
+			user_found = &usr
+		}
+
+		activeChat.ChatData.Messages = append(activeChat.ChatData.Messages, msg)
+
+		user_found.Messages = append(user_found.Messages, msg)
+		filter := bson.M{"name": activeChat.Name}
+		update := bson.M{"$set": bson.M{"chatData": activeChat.ChatData}}
+		mongoErr := chat_collection.FindOneAndUpdate(context.Background(), filter, update)
+		if mongoErr != nil && mongoErr.Err() != nil {
+			if mongoErr.Err() == mongo.ErrNoDocuments {
+				_, mongoErr2 := chat_collection.InsertOne(context.Background(), activeChat)
+				if mongoErr2 != nil {
+					log.Printf("Mongo err - insert user message: %v", mongoErr2)
+				}
 			} else {
-				update := bson.M{"$set": bson.M{"Messages": usr.Messages}}
-				_, err = user_collection.UpdateOne(context.Background(), filter, update)
-			}
-			if err != nil {
-				log.Printf("error: %v", err)
-				break
+				log.Printf("Mongo err - update user messages: %v", mongoErr.Err())
 			}
 		}
 
-		// Insert the test message into the collection
-		_, err = message_collection.InsertOne(context.Background(), msg)
-		if err != nil {
-			log.Printf("error: %v", err)
-			break
-		}
-		update := bson.M{"$set": bson.M{"Messages": usr.Messages}}
-		_, err = user_collection.UpdateOne(context.Background(), filter, update)
-		// Check for errors during insertion
-		if err != nil {
-			log.Printf("error: %v", err)
-			break
-		}
-
-		userData.Messages = append(userData.Messages, msg)
-		initialData.Content = userData
+		initialData.Content = activeChat.ChatData
 
 		broadcast <- initialData
 		broadcast <- msg
@@ -219,7 +160,7 @@ func handleMessages() {
 		for client := range clients {
 			err := client.WriteJSON(msg)
 			if err != nil {
-				log.Printf("error: %v", err)
+				log.Printf("Message send: %v", err)
 				client.Close()
 				delete(clients, client)
 			}
