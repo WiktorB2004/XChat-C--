@@ -13,9 +13,10 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-var clients = make(map[*websocket.Conn]bool) // Connected clients
-var clients_ip = make(map[string]string)     // Connected clients - ip -> username
-var broadcast = make(chan models.Message)    // Broadcast channel
+var clients = make(map[*websocket.Conn]bool)          // Connected clients
+var clientUsername = make(map[string]*websocket.Conn) // Connected clients - ws -> username
+var activeUsersChats = make(map[string]string)        // Current user chat - username -> chat
+var broadcast = make(chan models.Message)             // Broadcast channel
 
 var activeChat = models.Chat{
 	Name:     "global",
@@ -94,15 +95,49 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 
 		// Hanlde chat switch
 		if msg.Type == "switch" {
-			content, ok := msg.Content.(string)
+			chatName, ok := msg.Content.(string)
 			if !ok {
 				log.Print("Err - switching the chat")
 			} else {
-				utils.LoadChat(content, &activeChat)
+				// Check if this is a direct chat
+				_, ok = clientUsername[msg.Sender]
+				if ok {
+					if msg.Sender < chatName {
+						activeUsersChats[msg.Sender] = msg.Sender + "/" + chatName
+					} else {
+						activeUsersChats[msg.Sender] = chatName + "/" + msg.Sender
+					}
+					activeChat = models.Chat{}
+					activeChat.Name = activeUsersChats[msg.Sender]
+					activeChat.ChatData = models.Data{}
+					var usr models.User
+					usr.Username = "global"
+					activeChat.ChatData.Users = append(activeChat.ChatData.Users, usr)
+					activeChat.IsGroup = false
+				} else {
+					activeUsersChats[msg.Sender] = chatName
+				}
 			}
 		}
-
 		// ------------------
+
+		userChat, exists := activeUsersChats[msg.Sender]
+		if exists {
+			err = utils.LoadChat(userChat, &activeChat)
+			if err != nil {
+				if err == mongo.ErrNoDocuments {
+					_, mongoErr := chat_collection.InsertOne(context.Background(), activeChat)
+					if mongoErr != nil {
+						log.Printf("Mongo err - insert user message: %v", mongoErr)
+					}
+				} else {
+					log.Printf("Err - loading the chat: %v", err)
+				}
+			}
+		} else {
+			activeUsersChats[msg.Sender] = "global"
+			clientUsername[msg.Sender] = ws
+		}
 
 		user_found := utils.UserFind(msg.Sender, activeChat.ChatData.Users)
 
@@ -113,7 +148,6 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			if msg.Type != "switch" {
 				usr.Messages = append(usr.Messages, msg)
 			}
-			clients_ip[ip] = msg.Sender
 			activeChat.ChatData.Users = append(activeChat.ChatData.Users, usr)
 			initialData.Content = activeChat.ChatData
 
@@ -156,11 +190,14 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 
 		initialData.Content = activeChat.ChatData
 
-		broadcast <- initialData
+		// broadcast <- initialData
+		sendChatMessage(activeUsersChats[msg.Sender], initialData)
+
 		broadcast <- msg
 	}
 }
 
+// FIXME: Check and correct clients / clientsUseranme deletion
 func handleMessages() {
 	for {
 		// Grab the next message from the broadcast channel
@@ -169,9 +206,20 @@ func handleMessages() {
 		for client := range clients {
 			err := client.WriteJSON(msg)
 			if err != nil {
-				log.Printf("Message send: %v", err)
+				log.Printf("Error - message send: %v", err)
 				client.Close()
 				delete(clients, client)
+			}
+		}
+	}
+}
+
+func sendChatMessage(chat string, msg models.Message) {
+	for username, conn := range clientUsername {
+		if activeUsersChats[username] == chat {
+			err := conn.WriteJSON(msg)
+			if err != nil {
+				log.Printf("Client specific message sending failed: %v", msg)
 			}
 		}
 	}
