@@ -14,9 +14,10 @@ import (
 )
 
 var clients = make(map[*websocket.Conn]bool)          // Connected clients
-var clientUsername = make(map[string]*websocket.Conn) // Connected clients - ws -> username
+var clientUsername = make(map[string]*websocket.Conn) // Connected clients - username -> ws
 var activeUsersChats = make(map[string]string)        // Current user chat - username -> chat
 var broadcast = make(chan models.Message)             // Broadcast channel
+var userList []string
 
 var activeChat = models.Chat{
 	Name:     "global",
@@ -39,6 +40,10 @@ func main() {
 
 	// Load global chat - default behavior
 	utils.LoadChat("global", &activeChat)
+
+	for _, user := range activeChat.ChatData.Users {
+		userList = append(userList, user.Username)
+	}
 
 	// Configure websocket route
 	http.HandleFunc("/ws", handleConnections)
@@ -100,7 +105,7 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 				log.Print("Err - switching the chat")
 			} else {
 				// Check if this is a direct chat
-				_, ok = clientUsername[msg.Sender]
+				ok := utils.StringContain(userList, chatName)
 				if ok {
 					if msg.Sender < chatName {
 						activeUsersChats[msg.Sender] = msg.Sender + "/" + chatName
@@ -145,6 +150,7 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 			var usr models.User
 			usr.Username = msg.Sender
 			usr.Password = "TEST"
+			userList = append(userList, msg.Sender)
 			if msg.Type != "switch" {
 				usr.Messages = append(usr.Messages, msg)
 			}
@@ -190,7 +196,6 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 
 		initialData.Content = activeChat.ChatData
 
-		// broadcast <- initialData
 		sendChatMessage(activeUsersChats[msg.Sender], initialData)
 
 		broadcast <- msg
@@ -219,7 +224,7 @@ func sendChatMessage(chat string, msg models.Message) {
 		if activeUsersChats[username] == chat {
 			err := conn.WriteJSON(msg)
 			if err != nil {
-				log.Printf("Client specific message sending failed: %v", msg)
+				log.Printf("Chat specific message sending failed: %v", msg)
 			}
 		}
 	}

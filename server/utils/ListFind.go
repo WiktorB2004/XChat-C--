@@ -12,3 +12,12 @@ func UserFind(target string, list []models.User) *models.User {
 	}
 	return nil
 }
+
+func StringContain(elems []string, target string) bool {
+	for _, s := range elems {
+		if target == s {
+			return true
+		}
+	}
+	return false
+}
